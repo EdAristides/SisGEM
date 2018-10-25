@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SisGEM - Sistema de Gestão de Equipamentos Móveis</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i" rel="stylesheet">
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script>
+        function open() {
+            if ($("#affix").hasClass("intro")) {
+                $("#affix").removeClass("intro");
+            }
+            else {
+                $("#affix").addClass("intro");
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+  <div id="topbar">
+        <div class="navbar navbar-fixed-top text-center">
+            <div class="container-fluid">
+                <div class="col-md-2 col-sm-2 col-xs-12 user" style="z-index:1">
+                </div>
+                <div class="col-md-2 col-md-offset-3 col-sm-3 col-xs-12 logo">
+                    SisGEM
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <span id="resp" class="glyphicon glyphicon-menu-hamburger" onclick="myFunction()"></span>
+        <div class="row mainrow">
+            <div class="col-md-2 col-sm-2 col-xs-4">
+                <div id="affix" class="affix col-md-12 col-sm-12 col-xs-12">
+                    <ul class="nav nav-stacked text-left">
+                        <li><a href="/modelos"><div class="icon modelos"></div><h3> &nbsp;Modelos</h3></a></li>
+                        <li><a href="/equipamentos"><div class="icon equipamentos"></div><h3> &nbsp;Equipamentos</h3></a></li>
+                        <li><a href="/servidors"><div class="icon servidores"></div><h3> &nbsp;Servidores</h3></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="conteudo">
+      <%= yield %>
+    </div>
+
+    <script>
+        $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy',
+            language: 'pt-BR',
+            todayHighlight: true
+        });
+
+        $(".datepicker").mask("00/00/0000");
+        $('.currency').mask('000.000.000.000.000,00', { reverse: true });
+        $(".cpf").mask("000.000.000-00");
+        $(".cnpj").mask("00.000.000/0000-00");
+        $(".cep").mask("00000-000");
+        $(".telefone").mask("(00) 0000-0000");
+        $(".celular").mask("(00) 00000-0000");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,809 @@
+﻿body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+body.login {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#08091c+0,050646+17,040759+34,06136d+51,071b7b+68,092d85+85,092d85+100 */
+    background: #08091c; /* Old browsers */
+    background: -moz-linear-gradient(top, #08091c 0%, #050646 17%, #040759 34%, #06136d 51%, #071b7b 68%, #092d85 85%, #092d85 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #08091c 0%,#050646 17%,#040759 34%,#06136d 51%,#071b7b 68%,#092d85 85%,#092d85 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #08091c 0%,#050646 17%,#040759 34%,#06136d 51%,#071b7b 68%,#092d85 85%,#092d85 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08091c', endColorstr='#092d85',GradientType=0 ); /* IE6-9 */
+    padding: 150px 0px 25px;
+    overflow-y: hidden;
+}
+
+#login-form {
+    border-radius: 5px;
+    background-color: #fff;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    position: absolute;
+    z-index: 1;
+}
+
+    #login-form a {
+        color: #050646;
+    }
+
+        #login-form a:hover {
+            color: #4C5B68;
+        }
+
+#consulta {
+    border-radius: 5px;
+    background-color: #808080;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    float: right;
+    margin-top: 40px;
+}
+
+label {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.22px;
+    line-height: 18px;
+}
+
+#consulta label {
+    color: #fff;
+}
+
+.login .btn {
+    border-radius: 15px;
+    font-weight: 700;
+    color: #fff;
+    padding: 5px 20px;
+    margin: 5% 0%;
+    border: none;
+}
+
+.btn {
+    border-radius: 15px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #050646;
+}
+
+.btn-default {
+    background-color: #4C5B68;
+}
+
+footer h3{
+    color: #fff;
+    margin-top: 16%;
+    font-size: 14px;
+}
+
+.no_gutter_left {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.no_gutter_right {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+/*02*/
+
+#topbar .navbar {
+    padding: 1.5% 0%;
+    background-color: #fff;
+    box-shadow: 0px 4px 23px 0 rgba(199,201,210,0.5);
+}
+
+#topbar .logo img {
+    display: block;
+}
+
+#topbar .perfil h2 img {
+    border: solid 3px #3171e7;
+    border-radius: 2em;
+}
+
+#topbar .perfil h2 {
+    font-weight: 500;
+    font-size: 13px;
+    color: #6a6f79;
+    display: inline-block;
+}
+
+
+#topbar .glyphicon {
+    color: #6a6f79;
+}
+
+/**/
+
+.affix {
+    float: left;
+    width: 6% !important;
+    z-index: 4000 !important;
+    background-color: #3A4349;
+    padding: 0%;
+    margin-left: -1.08%;
+    height: -webkit-fill-available;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#affix:hover {
+    width: 16% !important;
+}
+
+.affix .glyphicon {
+    display: inline-block;
+    margin-left: -5px;
+}
+
+.intro .glyphicon {
+    display: inline-block !important;
+}
+
+.intro .icon {
+    margin-left: -5.3% !important;
+}
+
+.affix .icon {
+    width: 27px;
+    height: 25px;
+    margin-bottom: -4%;
+    margin-left: -20%;
+    display: inline-block;
+}
+
+.affix .icon {
+    width: 27px;
+    margin: 0px 3px -10px -3px;
+    height: 52px;
+    margin-left: -1.5% !important;
+}
+
+.affix:hover .icon {
+    height: 35px;
+}
+
+.intro .icon {
+    width: 27px;
+    margin: 0px 3px -10px -3px;
+    height: 52px;
+    margin-left: -1.5% !important;
+}
+
+.intro:hover .icon {
+    margin-top: 8px !important;
+}
+
+.intro:hover .panel-group .icon {
+    margin-top: 8px !important;
+}
+
+.affix .open {
+    background: url(../img/open.png) center center no-repeat;
+}
+
+.affix .negocio {
+    background: url(../img/negocio.png) center center no-repeat;
+}
+
+.affix .tag {
+    background: url(../img/tag.png) center center no-repeat;
+}
+
+.affix .tema {
+    background: url('../img/tema.png') center center no-repeat;
+}
+
+.affix .plano {
+    background: url('../img/plano.png') center center no-repeat;
+}
+
+.affix .seguimento {
+    background: url('../img/seguimento.png') center center no-repeat;
+}
+
+.affix .template {
+    background: url('../img/template.png') center center no-repeat;
+}
+
+.affix .social {
+    background: url(../img/social.png) center center no-repeat;
+}
+
+.affix .editor {
+    background: url('../img/editores.png') center center no-repeat;
+}
+
+.affix .relatorio {
+    background: url('../img/relatorios.png') center center no-repeat;
+}
+
+.affix .perfil {
+    background: url('../img/perfis.png') center center no-repeat;
+}
+
+.affix img {
+    width: initial;
+}
+
+.affix .nav > li > a {
+    padding: 0px 0px 0px 25px !important;
+    margin: 0;
+}
+
+.affix .nav > li > a {
+    position: initial;
+    display: block;
+    padding: 8px 15px;
+    color: #255dc4 !important;
+}
+
+/*.affix .nav > li > a:hover .icon, .affix .nav > li > a:hover h3 {
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1);
+        color: #fff !important;
+    }*/
+
+.intro .nav > li > a {
+    position: initial;
+    display: block;
+    padding: 8px 15px;
+    color: #255dc4 !important;
+}
+
+.affix a:link {
+    text-decoration: none;
+}
+
+.affix {
+    color: #CDD3E1 !important;
+    margin-top: 26px;
+    margin-top: 63px;
+}
+
+    .affix h3 {
+        display: none;
+    }
+
+    .affix span {
+        font-family: 'Ubuntu', sans-serif;
+        display: none;
+        width: 20%;
+    }
+
+    .affix:hover h3 {
+        display: inline-block !important;
+        color: #CDD3E1;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.22px;
+        line-height: 18px;
+        width: 55%;
+    }
+
+    .affix:hover span {
+        display: initial;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 0.22px;
+        line-height: 18px;
+        background-color: #1E76F4;
+        border-radius: 14px;
+        padding: 1px 10px;
+        margin-left: 15px;
+    }
+
+.intro {
+    width: 16.5% !important;
+}
+
+    .intro h3 {
+        font-size: 12px !important;
+        display: inline-block !important;
+        color: #CDD3E1;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.22px;
+        line-height: 18px;
+    }
+
+    .intro .icon {
+        height: 35px !important;
+    }
+
+#resp {
+    margin: 0% 0% 0%;
+    cursor: pointer;
+    position: fixed;
+    display: none;
+}
+
+.nav-stacked li + li {
+    /*border-top: solid 1px #6f0f37;*/
+    box-shadow: inset 0px 1px 0px rgba(255,255,255,0.1);
+}
+
+.nav-stacked li + .panel-group {
+    border-top: solid 1px #6f0f37;
+    box-shadow: inset 0px 1px 0px rgba(255,255,255,0.1);
+}
+
+.panel-group {
+    margin: 0px !important;
+}
+
+    .panel-group h4 {
+        color: #fff;
+    }
+
+.panel-heading {
+    background-color: #3171e7 !important;
+}
+
+    .panel-heading:hover {
+        background-color: #2a60c5 !important;
+    }
+
+
+.panel-group .panel-heading + .panel-collapse > .list-group, .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border: none !important;
+}
+
+.nav-stacked li:hover {
+    background-color: #2a60c5;
+    position: initial;
+}
+
+.list-group-item {
+    background-color: #2a60c5 !important;
+    border: none;
+    color: #a1c2ff !important;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.nav-stacked .list-group-item a:hover h3 {
+    color: #fff;
+    filter: none;
+    background-color: transparent !important;
+}
+
+
+.nav-stacked li a:hover {
+    background-color: #535C68 !important;
+    color: #CDD3E1 !important;
+}
+
+.list-group-item a {
+    padding-left: 12%;
+}
+
+.panel-default {
+    border: none !important;
+}
+
+.affix .panel-heading {
+    padding: 0px 15px !important;
+}
+
+.affix .panel-heading {
+    display: block;
+}
+
+.intro .panel-heading {
+    padding: 0px 15px;
+}
+
+.intro .painel-heading {
+    padding: 0px 15px !important;
+}
+
+#conteudo {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+    #conteudo ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #B5BCCB;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 15px;
+        font-style: italic;
+        letter-spacing: 0.25px;
+        line-height: 20px;
+    }
+
+    #conteudo ::-moz-placeholder { /* Firefox 19+ */
+        color: #B5BCCB;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 15px;
+        font-style: italic;
+        letter-spacing: 0.25px;
+        line-height: 20px;
+    }
+
+    #conteudo :-ms-input-placeholder { /* IE 10+ */
+        color: #B5BCCB;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 15px;
+        font-style: italic;
+        letter-spacing: 0.25px;
+        line-height: 20px;
+    }
+
+    #conteudo :-moz-placeholder { /* Firefox 18- */
+        color: #B5BCCB;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 15px;
+        font-style: italic;
+        letter-spacing: 0.25px;
+        line-height: 20px;
+    }
+
+.conteudoSup .form-control {
+    border: none;
+    border-bottom: 0.3px solid #CDD3E1;
+    border-radius: 0px;
+    box-shadow: none;
+    line-height: 22px;
+    padding-left: 0;
+}
+
+.conteudoSup {
+    padding: 2% 1%;
+    border: 1px solid #E5E6EB;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 4px 7px 16px 0 rgba(193,206,235,0.35);
+}
+
+#conteudo h1 {
+    color: #3A4349;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.33px;
+    line-height: 27px;
+}
+
+.btn-primary {
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px 0 #D3D6DB;
+    color: #FFFFFF;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    text-align: center;
+}
+
+.conteudoSup .btn-default {
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px 0 #D3D6DB;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+}
+
+.conteudoInf .btn {
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px 0 #D3D6DB;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+    margin: 5px;
+}
+
+.conteudoInf .btn-sm {
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.conteudoInf .btn-sm:hover {
+    font-family: 'Ubuntu', sans-serif;
+    color: #08091c;
+}
+
+.conteudoInf .form-control {
+}
+
+#conteudo .conteudoSup .btn-success {
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px 0 #D3D6DB;
+    color: #FFFFFF;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+}
+
+.btn-success {
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px 0 #D3D6DB;
+    color: #FFFFFF;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+}
+
+#conteudo .conteudoInf {
+    box-shadow: 4px 7px 16px 0 rgba(193,206,235,0.35);
+    margin-top: 15px;
+    padding: 2% 2% 15px;
+    border: 1px solid #E5E6EB;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+
+    #conteudo .conteudoInf h1 {
+        color: #667283;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    #conteudo .conteudoInf .table-responsive {
+        margin-top: 0.5%;
+    }
+
+    #conteudo .conteudoInf th {
+        color: #667283;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    #conteudo .conteudoInf tr td {
+        color: #667283;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    #conteudo .conteudoInf .status h2 {
+        color: #FFFFFF;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+        margin: 0;
+        padding: 3px;
+        box-shadow: 1px 1px 3px 0 #D3D6DB;
+        border-radius: 7px;
+    }
+
+    #conteudo .conteudoInf .pendente h2 {
+        background-color: #EDC21B;
+    }
+
+    #conteudo .conteudoInf .ativo h2 {
+        background-color: #8CC300;
+    }
+
+    #conteudo .conteudoInf .inativo h2 {
+        background-color: #B1B7C0;
+    }
+
+#conteudo .cadastro .row {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#conteudo .conteudoSup .cadastro .btn-primary {
+    margin-top: 8% !important;
+}
+
+#conteudo .conteudoSup .cadastro img {
+    border-radius: 2em;
+}
+
+#conteudo .conteudoSup .responsavel input[type=checkbox], input[type=radio] {
+    margin-left: 50%;
+    margin-right: 15%;
+}
+
+/**/
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+scrollbar {
+    scrollbar-base-color: #C0C0C0;
+    scrollbar-base-color: #C0C0C0;
+    scrollbar-3dlight-color: #C0C0C0;
+    scrollbar-highlight-color: #C0C0C0;
+    scrollbar-track-color: #EBEBEB;
+    scrollbar-arrow-color: black;
+    scrollbar-shadow-color: #C0C0C0;
+    scrollbar-dark-shadow-color: #C0C0C0;
+}
+
+/**/
+
+@media(max-width:320px) {
+    #login-form {
+        position: initial;
+    }
+
+    .affix img {
+        display: none;
+    }
+
+    #conteudo {
+        margin-top: 42%;
+    }
+
+    /**/
+
+    .affix {
+        margin-top: 58%;
+        margin-left: -3.37%;
+        display: none;
+    }
+
+        .affix:hover {
+            width: 60% !important;
+        }
+
+    .intro {
+        display: block !important;
+        width: 60% !important;
+        overflow-y: auto;
+        height: 450px;
+    }
+
+    #resp {
+        margin: 51% 0% 0%;
+        z-index: 4000;
+        display: block;
+    }
+
+    /**/
+
+    #conteudo {
+        margin-top: 30%;
+    }
+
+    .btn-success {
+        width: initial !important;
+        font-size: 11px !important;
+    }
+
+    .btn-primary {
+        width: initial !important;
+        font-size: 11px;
+    }
+
+    .btn-default {
+        width: initial;
+        font-size: 11px;
+    }
+    .affix img {
+        display: none;
+    }
+
+    #conteudo {
+        margin-top: 30%;
+    }
+
+    .btn-success {
+        font-size: 11px !important;
+    }
+
+    .btn-primary {
+        font-size: 11px !important;
+    }
+
+    .conteudoSup .btn-default {
+        font-size: 11px !important;
+    }
+
+    /**/
+
+    .affix {
+        margin-top: 50%;
+        margin-left: -3.37%;
+        display: none;
+    }
+
+        .affix:hover {
+            width: 60% !important;
+        }
+
+    .intro {
+        display: block !important;
+        width: 60% !important;
+        overflow-y: auto;
+        height: 450px;
+    }
+
+    #resp {
+        margin: 45% 0% 0%;
+        z-index: 4000;
+        display: block;
+    }
+
+    /**/
+
+    .no_gutter_left {
+        padding: initial;
+        margin: initial;
+    }
+
+    .no_gutter_right {
+        padding: initial;
+        margin: initial;
+    }
+}
+
+@media(min-width: 321px) and (max-width:767px) {
+    #login-form {
+        position: initial;
+    }
+
+    .affix {
+        width: 24% !important;
+        padding: 2% 0%;
+        margin-left: -1.80%;
+    }
+
+    #conteudo {
+        margin-top: 5%;
+    }
+
+        #conteudo .conteudoSup .btn-primary {
+            font-size: 13px;
+        }
+
+        #conteudo .conteudoSup .btn-success {
+            font-size: 13px;
+        }
+}
+
+@media(min-width: 768px) and (max-width:991px) {
+    .affix {
+        margin-left: -1.6%;
+        padding: 1% 0%;
+        width: 19% !important;
+    }
+}
+
+@media(min-width: 992px) and (max-width: 1200px) {
+}

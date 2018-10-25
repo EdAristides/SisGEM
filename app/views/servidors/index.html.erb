@@ -1,0 +1,55 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+  <p id="notice"><%= notice %></p>
+  <h1>Servidores</h1>
+</div>
+
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+      <%= link_to 'Novo Servidor', new_servidor_path, class:"btn btn-default" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Siape</th>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Email</th>
+              <th>Cargo</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <%= form_tag servidors_path, :action => 'index', :method => 'get' do %>
+              <p>
+                <%= 'Digite o siape para buscar' %>
+                <br>
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "Buscar", :siape => nil %>
+              </p>
+            <% end %>
+
+            <% @servidors.each do |servidor| %>
+              <tr>
+                <td><%= servidor.siape %></td>
+                <td><%= servidor.nome %></td>
+                <td><%= servidor.telefone %></td>
+                <td><%= servidor.email %></td>
+                <td><%= servidor.cargo %></td>
+                <td><%= link_to 'Detalhes', servidor %></td>
+                <td><%= link_to 'Editar', edit_servidor_path(servidor), class: "btn-sm btn-default" %></td>
+                <td><%= link_to 'Deletar', servidor, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

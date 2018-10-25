@@ -1,0 +1,35 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patrimonio:</strong>
+  <%= @equipamento.patrimonio %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @equipamento.serial %>
+</p>
+
+<p>
+  <strong>Dataaquisicao:</strong>
+  <%= @equipamento.dataAquisicao %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @equipamento.status %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @equipamento.modelo_id %>
+</p>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <%= link_to 'Editar', edit_equipamento_path(@equipamento), class:"btn btn-primary"%>
+      <%= link_to 'Voltar', equipamentos_path, class:"btn btn-default"%>
+    </div>
+  </div>
+</div>

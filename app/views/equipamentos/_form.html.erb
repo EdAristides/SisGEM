@@ -1,0 +1,63 @@
+<%= form_with(model: equipamento, local: true) do |form| %>
+  <% if equipamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(equipamento.errors.count, "error") %> prohibited this equipamento from being saved:</h2>
+
+      <ul>
+      <% equipamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :patrimonio %>
+      <%= form.text_field :patrimonio, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :serial %>
+      <%= form.text_field :serial, class: "form-control" %>
+    </div>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :modelo %>
+
+    <%= form.collection_select :modelos_id, [], [], :marca %>
+
+    <%= link_to 'New Modelo', new_modelo_path %>
+  </div> -->
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :modelo_id, 'Modelo' %>
+      <%= form.collection_select :modelo_id, Modelo.all, :id, :marca %>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :dataAquisicao %>
+      <%= form.date_select :dataAquisicao %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= form.submit %>
+        <%= link_to 'Voltar', equipamentos_path, class:"btn btn-default" %>
+      </div>
+    </div>
+  </div>
+<% end %>

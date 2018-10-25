@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patrimonio: MyString
+  anoAquisicao: 2018-09-12
+  status: MyString
+
+two:
+  patrimonio: MyString
+  anoAquisicao: 2018-09-12
+  status: MyString

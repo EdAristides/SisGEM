@@ -1,0 +1,42 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Marca:</strong>
+    <%= @modelo.marca %>
+  </p>
+
+  <p>
+    <strong>Configuracao:</strong>
+    <%= @modelo.configuracao %>
+  </p>
+
+  <p>
+    <strong>Valor:</strong>
+    <%= @modelo.valor %>
+  </p>
+
+  <p>
+    <strong>Tipo:</strong>
+    <%= @modelo.tipo %>
+  </p>
+
+  <p>
+    <strong>Equipamentos:</strong>
+
+    <% if @modelo.equipamentos.empty? %>
+      <p>Nenhum equipamento vinculado ao modelo</p>
+    <% else %>
+      <% @modelo.equipamentos.each do |equipamento| %>
+        <br><%= equipamento.id %>
+      <% end %>
+    <% end %> 
+  </p>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <%= link_to 'Editar', edit_modelo_path(@modelo), class:"btn btn-primary"%>
+      <%= link_to 'Voltar', modelos_path, class:"btn btn-default"%>
+    </div>
+  </div>
+</div>

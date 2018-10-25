@@ -1,0 +1,35 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Siape:</strong>
+    <%= @servidor.siape %>
+  </p>
+
+  <p>
+    <strong>Nome:</strong>
+    <%= @servidor.nome %>
+  </p>
+
+  <p>
+    <strong>Telefone:</strong>
+    <%= @servidor.telefone %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @servidor.email %>
+  </p>
+
+  <p>
+    <strong>Cargo:</strong>
+    <%= @servidor.cargo %>
+  </p>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <%= link_to 'Editar', edit_servidor_path(@servidor) , class:"btn btn-primary"%>
+      <%= link_to 'Voltar', servidors_path, class:"btn btn-default"%>
+    </div>
+  </div>
+</div>

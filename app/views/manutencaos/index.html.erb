@@ -1,0 +1,47 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+  <p id="notice"><%= notice %></p>
+  <h1>Manutenções</h1>
+</div>
+
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+      <%= link_to 'Nova Manutenção', new_manutencao_path, class:"btn btn-default" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Patrimônio</th>
+              <th>Numero de ordem</th>
+              <th>Descrição</th>
+              <th>Data de entrada</th>
+              <th>Data de saída</th>
+              <th>Status</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+            <% @manutencaos.each do |manutencao| %>
+              <tr>
+                <td><%= link_to manutencao.equipamento.patrimonio, equipamento_path("#{manutencao.equipamento_id}") %></td>
+                <td><%= link_to "#{manutencao.numOrdem}", manutencao %></td>
+                <td><%= manutencao.descricao %></td>
+                <td><%= manutencao.dataEntrada %></td>
+                <td><%= manutencao.dataSaida %></td>
+                <td><%= manutencao.status %></td>
+                <td><%= link_to 'Detalhes', manutencao %></td>
+                <td><%= link_to 'Editar', edit_manutencao_path(manutencao), class: "btn-sm btn-default" %></td>
+                <td><%= link_to 'Deletar', manutencao, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

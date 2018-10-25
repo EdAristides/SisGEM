@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numOrdem: MyString
+  descricao: MyString
+  dataEntrada: 2018-10-25
+  dataSaida: 2018-10-25
+  status: MyString
+
+two:
+  numOrdem: MyString
+  descricao: MyString
+  dataEntrada: 2018-10-25
+  dataSaida: 2018-10-25
+  status: MyString

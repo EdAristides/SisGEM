@@ -2,6 +2,7 @@ class Equipamento < ApplicationRecord
 	belongs_to :modelo
 	has_many :estoque_pecas
 	has_many :pecas, :through => :estoque_pecas
+	has_many :manutencaos
 
 	def self.search(search)
 	    if search

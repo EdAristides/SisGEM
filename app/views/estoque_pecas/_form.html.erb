@@ -1,0 +1,43 @@
+<%= form_with(model: estoque_peca, local: true) do |form| %>
+  <% if estoque_peca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estoque_peca.errors.count, "error") %> prohibited this estoque_peca from being saved:</h2>
+
+      <ul>
+      <% estoque_peca.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :equipamento_id, 'Equipamento' %>
+      <%= form.collection_select :equipamento_id, Equipamento.all, :id, :patrimonio %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :peca_id, 'Peca' %>
+      <%= form.collection_select :peca_id, Peca.all, :id, :nome %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :quantidade %>
+      <%= form.text_field :quantidade, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= form.submit %>
+        <%= link_to 'Voltar', estoque_pecas_path, class:"btn btn-default" %>
+      </div>
+    </div>
+  </div>
+<% end %>

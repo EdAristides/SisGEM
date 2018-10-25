@@ -1,0 +1,43 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+  <p id="notice"><%= notice %></p>
+  <h1>Estoque de Peças</h1>
+</div>
+
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+      <%= link_to 'Novo Estoque de Peça', new_estoque_peca_path, class:"btn btn-default" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Equipamento</th>
+              <th>Peça</th>
+              <th>Quantidade</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <% @estoque_pecas.each do |estoque_peca| %>
+              <tr>
+                <td><%= link_to estoque_peca.equipamento.patrimonio, equipamento_path("#{estoque_peca.equipamento_id}") %></td>
+                <td><%= link_to estoque_peca.peca.nome, peca_path("#{estoque_peca.peca_id}") %></td>
+                <td><%= estoque_peca.quantidade %></td>
+                <td><%= link_to 'Detalhes', estoque_peca %></td>
+                <td><%= link_to 'Editar', edit_estoque_peca_path(estoque_peca), class: "btn-sm btn-default" %></td>
+                <td><%= link_to 'Deletar', estoque_peca, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

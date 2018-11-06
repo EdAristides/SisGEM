@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datavinculo:</strong>
+  <%= @termo_compromisso.dataVinculo %>
+</p>
+
+<p>
+  <strong>Datadevolucao:</strong>
+  <%= @termo_compromisso.dataDevolucao %>
+</p>
+
+<%= link_to 'Edit', edit_termo_compromisso_path(@termo_compromisso) %> |
+<%= link_to 'Back', termo_compromissos_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_054239) do
+ActiveRecord::Schema.define(version: 2018_11_06_003214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,18 @@ ActiveRecord::Schema.define(version: 2018_10_25_054239) do
     t.string "cargo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "termo_compromissos", force: :cascade do |t|
+    t.string "numTermo"
+    t.date "dataVinculo"
+    t.date "dataDevolucao"
+    t.bigint "equipamento_id"
+    t.bigint "servidor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["equipamento_id"], name: "index_termo_compromissos_on_equipamento_id"
+    t.index ["servidor_id"], name: "index_termo_compromissos_on_servidor_id"
   end
 
 end

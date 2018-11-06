@@ -2,13 +2,13 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Equipamento:</strong>
-    <%= @manutencao.equipamento_id %>
+    <strong>Numordem:</strong>
+    <%= @manutencao.numOrdem %>
   </p>
 
   <p>
-    <strong>Numordem:</strong>
-    <%= @manutencao.numOrdem %>
+    <strong>Patrimônio:</strong>
+    <%= @manutencao.equipamento_id %>
   </p>
 
   <p>
@@ -18,12 +18,12 @@
 
   <p>
     <strong>Dataentrada:</strong>
-    <%= @manutencao.dataEntrada %>
+    <%= @manutencao.dataEntrada.strftime("%m/%d/%Y") %>
   </p>
 
   <p>
     <strong>Datasaida:</strong>
-    <%= @manutencao.dataSaida %>
+    <%= @manutencao.dataSaida.strftime("%m/%d/%Y") %>
   </p>
 
   <p>

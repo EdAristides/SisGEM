@@ -4,7 +4,10 @@ class ManutencaosController < ApplicationController
   # GET /manutencaos
   # GET /manutencaos.json
   def index
-    @manutencaos = Manutencao.all
+    # @manutencaos = Manutencao.all
+    @manutencaos = Manutencao.search(params[:search])
+    # @manutencaos = Manutencao.find(params[:equipamento_id])
+    # @manutencao = params[:equipamento_id]
   end
 
   # GET /manutencaos/1

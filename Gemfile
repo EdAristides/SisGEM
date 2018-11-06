@@ -63,3 +63,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+
+# https://github.com/tylergannon/toastr-rails
+gem 'toastr-rails'
+
+# https://github.com/BetterErrors/better_errors
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end

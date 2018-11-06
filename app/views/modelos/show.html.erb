@@ -22,13 +22,12 @@
   </p>
 
   <p>
-    <strong>Equipamentos:</strong>
-
+    <strong>Equipamentos (patrimônio):</strong>
     <% if @modelo.equipamentos.empty? %>
       <p>Nenhum equipamento vinculado ao modelo</p>
     <% else %>
       <% @modelo.equipamentos.each do |equipamento| %>
-        <br><%= equipamento.id %>
+        <br><%= link_to equipamento.patrimonio, equipamento_path("#{equipamento.id}") %>
       <% end %>
     <% end %> 
   </p>

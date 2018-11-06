@@ -1,0 +1,55 @@
+<%= form_with(model: termo_compromisso, local: true) do |form| %>
+  <% if termo_compromisso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(termo_compromisso.errors.count, "error") %> prohibited this termo_compromisso from being saved:</h2>
+
+      <ul>
+      <% termo_compromisso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :numTermo %>
+      <%= form.text_field :numTermo, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :equipamento_id, 'Equipamento' %>
+      <%= form.collection_select :equipamento_id, Equipamento.all, :id, :patrimonio %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :servidor_id, 'Servidor' %>
+      <%= form.collection_select :servidor_id, Servidor.all, :id, :siape %>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12 text-left">
+    <div class="form-group">
+    <%= form.label :dataVinculo, 'Data de Vinculo' %>
+    <%= form.date_select :dataVinculo %>
+  </div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12 text-left">
+    <div class="form-group">
+    <%= form.label :dataDevolucao, 'Data de Devolução' %>
+    <%= form.date_select :dataDevolucao %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= form.submit 'Salvar', class:"btn btn-default" %>
+        <%= link_to 'Voltar', "javascript:window.history.go(-1)", class:"btn btn-default" %>
+      </div>
+    </div>
+  </div>
+<% end %> 

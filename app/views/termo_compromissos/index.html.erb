@@ -1,0 +1,57 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+  <p id="notice"><%= notice %></p>
+  <h1>Termos de Compromisso</h1>
+</div>
+
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+      <%= link_to 'Novo Termo de Compromisso', new_termo_compromisso_path, class:"btn btn-default" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Número do Termo</th>
+              <th>Equipamento</th>
+              <th>Siape</th>
+              <th>Nome</th>
+              <th>Data de Vínculo</th>
+              <th>Data de Devolução</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <%= form_tag termo_compromissos_path, :action => 'index', :method => 'get' do %>
+              <p>
+                <%= 'Digite o número do termo para buscar' %>
+                <br>
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "Buscar", :numTermo => nil %>
+              </p>
+            <% end %>
+
+            <% @termo_compromissos.each do |termo| %>
+              <tr>
+                <td><%= termo.numTermo %></td>
+                <td><%= termo.equipamento.patrimonio %></td>
+                <td><%= termo.servidor.siape %></td>
+                <td><%= termo.servidor.nome %></td>
+                <td><%= termo.dataVinculo.strftime("%d/%m/%Y") %></td>
+                <td><%= termo.dataVinculo.strftime("%d/%m/%Y") %></td>
+                <td><%= link_to 'Detalhes', termo, class: "btn-sm btn-info" %></td>
+                <td><%= link_to 'Editar', edit_termo_compromisso_path(termo), class: "btn-sm btn-default" %></td>
+                <td><%= link_to 'Deletar', termo, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

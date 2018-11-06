@@ -13,6 +13,10 @@ class EquipamentosController < ApplicationController
   def show
   end
 
+  def manutencao
+    @equipamento_manutencaos = Manutencao.where(["equipamento_id = ?", params[:equipamento_id]])
+  end
+
   # GET /equipamentos/new
   def new
     @equipamento = Equipamento.new
@@ -29,7 +33,7 @@ class EquipamentosController < ApplicationController
 
     respond_to do |format|
       if @equipamento.save
-        format.html { redirect_to @equipamento, notice: 'Equipamento was successfully created.' }
+        format.html { redirect_to @equipamento, notice: 'Equipamento foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @equipamento }
       else
         format.html { render :new }
@@ -43,7 +47,7 @@ class EquipamentosController < ApplicationController
   def update
     respond_to do |format|
       if @equipamento.update(equipamento_params)
-        format.html { redirect_to @equipamento, notice: 'Equipamento was successfully updated.' }
+        format.html { redirect_to @equipamento, notice: 'Equipamento foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @equipamento }
       else
         format.html { render :edit }
@@ -57,7 +61,7 @@ class EquipamentosController < ApplicationController
   def destroy
     @equipamento.destroy
     respond_to do |format|
-      format.html { redirect_to equipamentos_url, notice: 'Equipamento was successfully destroyed.' }
+      format.html { redirect_to equipamentos_url, notice: 'Equipamento apagado com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +74,6 @@ class EquipamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipamento_params
-      params.require(:equipamento).permit(:patrimonio, :serial, :dataAquisicao, :status, :modelo_id)
+      params.require(:equipamento).permit(:id, :patrimonio, :serial, :dataAquisicao, :status, :modelo_id)
     end
 end

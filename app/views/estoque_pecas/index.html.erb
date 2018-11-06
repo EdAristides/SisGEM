@@ -30,7 +30,7 @@
                 <td><%= link_to estoque_peca.equipamento.patrimonio, equipamento_path("#{estoque_peca.equipamento_id}") %></td>
                 <td><%= link_to estoque_peca.peca.nome, peca_path("#{estoque_peca.peca_id}") %></td>
                 <td><%= estoque_peca.quantidade %></td>
-                <td><%= link_to 'Detalhes', estoque_peca %></td>
+                <td><%= link_to 'Detalhes', estoque_peca, class: "btn-sm btn-info" %></td>
                 <td><%= link_to 'Editar', edit_estoque_peca_path(estoque_peca), class: "btn-sm btn-default" %></td>
                 <td><%= link_to 'Deletar', estoque_peca, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
               </tr>

@@ -16,8 +16,8 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>Patrimônio</th>
               <th>Numero de ordem</th>
+              <th>Patrimônio</th>
               <th>Descrição</th>
               <th>Data de entrada</th>
               <th>Data de saída</th>
@@ -26,15 +26,25 @@
             </tr>
           </thead>
 
+          <tbody>
+            <%= form_tag manutencaos_path, :action => 'index', :method => 'get' do %>
+              <p>
+                <%= 'Digite o número de ordem para buscar' %>
+                <br>
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "Buscar", :numOrdem => nil %>
+              </p>
+            <% end %>
+
             <% @manutencaos.each do |manutencao| %>
               <tr>
-                <td><%= link_to manutencao.equipamento.patrimonio, equipamento_path("#{manutencao.equipamento_id}") %></td>
                 <td><%= link_to "#{manutencao.numOrdem}", manutencao %></td>
+                <td><%= link_to manutencao.equipamento.patrimonio, equipamento_path("#{manutencao.equipamento_id}") %></td>
                 <td><%= manutencao.descricao %></td>
-                <td><%= manutencao.dataEntrada %></td>
-                <td><%= manutencao.dataSaida %></td>
+                <td><%= manutencao.dataEntrada.strftime("%d/%m/%Y") %></td>
+                <td><%= manutencao.dataSaida.strftime("%d/%m/%Y") %></td>
                 <td><%= manutencao.status %></td>
-                <td><%= link_to 'Detalhes', manutencao %></td>
+                <td><%= link_to 'Detalhes', manutencao, class: "btn-sm btn-info" %></td>
                 <td><%= link_to 'Editar', edit_manutencao_path(manutencao), class: "btn-sm btn-default" %></td>
                 <td><%= link_to 'Deletar', manutencao, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
               </tr>

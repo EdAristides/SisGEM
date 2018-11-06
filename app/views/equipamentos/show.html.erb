@@ -1,35 +1,63 @@
 <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Patrimonio:</strong>
-  <%= @equipamento.patrimonio %>
-</p>
+  <p>
+    <strong>Patrimônio:</strong>
+    <%= @equipamento.patrimonio %>
+  </p>
 
-<p>
-  <strong>Serial:</strong>
-  <%= @equipamento.serial %>
-</p>
+  <p>
+    <strong>Serial:</strong>
+    <%= @equipamento.serial %>
+  </p>
 
-<p>
-  <strong>Dataaquisicao:</strong>
-  <%= @equipamento.dataAquisicao %>
-</p>
+  <p>
+    <strong>Data de Aquisição:</strong>
+    <%= @equipamento.dataAquisicao.strftime("%d/%m/%Y") %>
+  </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @equipamento.status %>
-</p>
+  <p>
+    <strong>Status:</strong>
+    <%= @equipamento.status %>
+  </p>
 
-<p>
-  <strong>Modelo:</strong>
-  <%= @equipamento.modelo_id %>
-</p>
+  <p>
+    <strong>Modelo:</strong>
+    <%= link_to @equipamento.modelo.marca, modelo_path("#{@equipamento.modelo_id}") %>
+  </p>
+
+  <p>
+    <% if @equipamento.status == "Doador de Peças"%>
+      <strong>Peças Disponíveis:</strong>
+      <br>
+      <%= link_to '+', new_estoque_peca_path, class:"btn btn-default btn-sm" %>
+      <% if @equipamento.estoque_pecas.empty? %>
+        <p>Nenhuma peça disponíveis</p>
+      <% else %>
+        <table width="500px">
+          <tr>
+            <td>Peça</td>
+            <td>Caracteristica</td>
+            <td>Quantidade</td>
+          </tr>
+          <% @equipamento.estoque_pecas.each do |estoque_pecas| %>
+            <tr>
+              <td><%= link_to estoque_pecas.peca.nome, peca_path("#{estoque_pecas.peca_id}") %></td>
+              <td><%= estoque_pecas.peca.caracteristica%></td>
+              <td><%= estoque_pecas.quantidade %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+    <% else %>
+
+    <% end %>
+  </p>
 
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <%= link_to 'Editar', edit_equipamento_path(@equipamento), class:"btn btn-primary"%>
-      <%= link_to 'Voltar', equipamentos_path, class:"btn btn-default"%>
+      <%= link_to 'Voltar', "javascript:window.history.go(-1)", class:"btn btn-default" %>
     </div>
   </div>
 </div>

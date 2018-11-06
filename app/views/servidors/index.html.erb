@@ -42,7 +42,7 @@
                 <td><%= servidor.telefone %></td>
                 <td><%= servidor.email %></td>
                 <td><%= servidor.cargo %></td>
-                <td><%= link_to 'Detalhes', servidor %></td>
+                <td><%= link_to 'Detalhes', servidor, class: "btn-sm btn-info" %></td>
                 <td><%= link_to 'Editar', edit_servidor_path(servidor), class: "btn-sm btn-default" %></td>
                 <td><%= link_to 'Deletar', servidor, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
               </tr>

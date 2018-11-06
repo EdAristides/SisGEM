@@ -1,0 +1,42 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+  <p id="notice"><%= notice %></p>
+  <h1>Ocorrências</h1>
+</div>
+
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+      <%= link_to 'Registrar Ocorrências', new_ocorrencium_path, class:"btn btn-default" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Termo de Compromisso</th>
+              <th>Tipo</th>
+              <th>Dataocorrencia</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @ocorrencia.each do |ocorrencium| %>
+              <tr>
+                <td><%= link_to ocorrencium.termo_compromisso.numTermo, termo_compromisso_path("#{ocorrencium.termo_compromisso_id}") %></td>
+                <td><%= ocorrencium.tipo %></td>
+                <td><%= ocorrencium.dataOcorrencia.strftime("%d/%m/%Y") %></td>
+                <td><%= link_to 'Detalhes', ocorrencium, class: "btn-sm btn-info" %></td>
+                <td><%= link_to 'Editar', edit_ocorrencium_path(ocorrencium), class: "btn-sm btn-default" %></td>
+                <td><%= link_to 'Deletar', ocorrencium, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

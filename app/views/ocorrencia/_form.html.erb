@@ -1,0 +1,38 @@
+<%= form_with(model: ocorrencium, local: true) do |form| %>
+  <% if ocorrencium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ocorrencium.errors.count, "error") %> prohibited this ocorrencium from being saved:</h2>
+
+      <ul>
+      <% ocorrencium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :termo_compromisso_id, 'Termo de Compromisso' %>
+      <%= form.collection_select :termo_compromisso_id, TermoCompromisso.all, :id, :numTermo %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :tipo, 'Tipo' %>
+      <%= form.select :tipo, ['Desaparecido', 'Furtado'] %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :dataOcorrencia, 'Data da Ocorrência' %>
+      <%= form.date_select :dataOcorrencia %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+  	<strong>Termo de Compromisso:</strong>
+   	<%= link_to @ocorrencium.termo_compromisso.numTermo, termo_compromisso_path("#{@ocorrencium.termo_compromisso_id}") %>
+  </p>
+
+  <p>
+	<strong>Tipo:</strong>
+	<%= @ocorrencium.tipo %>
+  </p>
+
+  <p>
+	<strong>Dataocorrencia:</strong>
+	<%= @ocorrencium.dataOcorrencia.strftime("%d/%m/%Y") %>
+  </p>
+
+  <div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+      <%= link_to 'Editar', edit_ocorrencium_path(@ocorrencium), class:"btn btn-primary"%>
+	  <%= link_to 'Voltar', "javascript:window.history.go(-1)", class:"btn btn-default" %>
+	</div>
+  </div>
+</div>

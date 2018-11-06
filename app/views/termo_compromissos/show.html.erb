@@ -1,14 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Datavinculo:</strong>
-  <%= @termo_compromisso.dataVinculo %>
-</p>
+	<p>
+  		<strong>Termo de Compromisso</strong>
+   		<%= link_to @termo_compromisso.servidor.siape, servidor_path("#{@termo_compromisso.servidor_id}") %>
+  	</p>
 
-<p>
-  <strong>Datadevolucao:</strong>
-  <%= @termo_compromisso.dataDevolucao %>
-</p>
+  	<p>
+  		<strong>Equipamento</strong>
+   		<%= link_to @termo_compromisso.equipamento.patrimonio, equipamento_path("#{@termo_compromisso.equipamento_id}") %>
+  	</p>
 
-<%= link_to 'Edit', edit_termo_compromisso_path(@termo_compromisso) %> |
-<%= link_to 'Back', termo_compromissos_path %>
+	<p>
+	  <strong>Data de vínculo:</strong>
+	  <%= @termo_compromisso.dataVinculo.strftime("%d/%m/%Y") %>
+	</p>
+
+	<p>
+	  <strong>Data de devolução:</strong>
+	  <%= @termo_compromisso.dataDevolucao.strftime("%d/%m/%Y") %>
+	</p>
+
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+      		<%= link_to 'Editar', edit_termo_compromisso_path(@termo_compromisso), class:"btn btn-primary"%>
+	  		<%= link_to 'Voltar', "javascript:window.history.go(-1)", class:"btn btn-default" %>
+		</div>
+  	</div>
+</div>

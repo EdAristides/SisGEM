@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ocorrencia
   resources :termo_compromissos
   resources :manutencaos
   resources :estoque_pecas

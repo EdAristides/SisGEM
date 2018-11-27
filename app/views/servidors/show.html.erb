@@ -26,6 +26,11 @@
     <%= @servidor.cargo %>
   </p>
 
+  <p>
+    <strong>Status:</strong>
+    <%= @servidor.status %>
+  </p>
+
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <%= link_to 'Editar', edit_servidor_path(@servidor) , class:"btn btn-primary"%>

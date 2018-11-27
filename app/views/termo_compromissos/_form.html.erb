@@ -13,36 +13,52 @@
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :numTermo %>
+      <%= form.label :numTermo, 'Número do Termo' %>
       <%= form.text_field :numTermo, class: "form-control" %>
     </div>
   </div>
 
-  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+<!--   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :equipamento_id, 'Equipamento' %>
-      <%= form.collection_select :equipamento_id, Equipamento.all, :id, :patrimonio %>
+      <%= form.label :equipamento_id, 'Patrimônio' %>
+      <%= form.text_field :equipamento_id, class: "form-control" %>
     </div>
-  </div>
+  </div> -->
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :servidor_id, 'Servidor' %>
-      <%= form.collection_select :servidor_id, Servidor.all, :id, :siape %>
+      <%= form.label :equipamento_id, 'Patrimônio' %>
+      <%= form.collection_select :equipamento_id, Equipamento.where(status: 'Disponível'), :id, :patrimonio, :prompt => "Escolha um patrimônio..." %>
+    </div>
+  </div>  
+
+<!--   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :servidor_id, 'Siape do Servidor' %>
+      <%= form.text_field :servidor_id, class: "form-control" %>
+    </div>
+  </div> -->
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :servidor_id, 'Siape do Servidor' %>
+      <%= form.collection_select :servidor_id, Servidor.where(status: 'Ativo'), :id, :siape, :prompt => "Escolha um servidor..." %>
     </div>
   </div>
 
   <div class="col-md-6 col-sm-6 col-xs-12 text-left">
     <div class="form-group">
-    <%= form.label :dataVinculo, 'Data de Vinculo' %>
-    <%= form.date_select :dataVinculo %>
+      <%= form.label :dataVinculo, 'Data de Vinculo' %>
+      <%= form.date_select :dataVinculo, :start_year => Date.current.year, :end_year => 2010 %>
+    </div>
   </div>
 
-  <div class="col-md-6 col-sm-6 col-xs-12 text-left">
+<!--   <div class="col-md-6 col-sm-6 col-xs-12 text-left">
     <div class="form-group">
-    <%= form.label :dataDevolucao, 'Data de Devolução' %>
-    <%= form.date_select :dataDevolucao %>
-  </div>
+      <%= form.label :dataDevolucao, 'Data de Devolução' %>
+      <%= form.date_select :dataDevolucao %>
+    </div>
+  </div> -->
 
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">

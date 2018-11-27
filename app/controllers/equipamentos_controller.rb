@@ -5,7 +5,8 @@ class EquipamentosController < ApplicationController
   # GET /equipamentos.json
   def index
     # @equipamentos = Equipamento.all
-    @equipamentos = Equipamento.search(params[:search])
+    # @equipamentos = Equipamento.search(params[:search]).page(params[:page]).per(2)
+    @equipamentos = Equipamento.search(params[:search]).order(:patrimonio).page(params[:page]).per(10)
   end
 
   # GET /equipamentos/1
@@ -14,7 +15,7 @@ class EquipamentosController < ApplicationController
   end
 
   def manutencao
-    @equipamento_manutencaos = Manutencao.where(["equipamento_id = ?", params[:equipamento_id]])
+    @equipamento_manutencaos = Manutencao.where(["equipamento_id = ?", params[:equipamento_id]]).order(:numOrdem).page(params[:page]).per(10)
   end
 
   # GET /equipamentos/new
@@ -59,11 +60,21 @@ class EquipamentosController < ApplicationController
   # DELETE /equipamentos/1
   # DELETE /equipamentos/1.json
   def destroy
-    @equipamento.destroy
-    respond_to do |format|
-      format.html { redirect_to equipamentos_url, notice: 'Equipamento apagado com sucesso.' }
-      format.json { head :no_content }
-    end
+    begin
+      @equipamento.destroy
+      # flash[:success] = "successfully destroyed."
+      respond_to do |format|
+        format.html { redirect_to equipamentos_url, notice: 'Equipamento was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    rescue ActiveRecord::DeleteRestrictionError => e
+      @equipamento.errors.add(:base, e)
+      # flash[:error] = "#{e}"
+      respond_to do |format|
+        format.html { redirect_to equipamentos_url, notice: 'Equipamento can not be destroyed. There is some dependency.' }
+        format.json { head :no_content }
+      end
+    end 
   end
 
   private

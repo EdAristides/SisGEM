@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_183524) do
   end
 
   create_table "estoque_pecas", force: :cascade do |t|
+    t.string "status"
     t.integer "quantidade"
     t.bigint "equipamento_id"
     t.bigint "peca_id"
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_183524) do
     t.string "telefone"
     t.string "email"
     t.string "cargo"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_183524) do
     t.string "numTermo"
     t.date "dataVinculo"
     t.date "dataDevolucao"
+    t.string "status"
     t.bigint "equipamento_id"
     t.bigint "servidor_id"
     t.datetime "created_at", null: false

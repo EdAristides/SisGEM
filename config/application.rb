@@ -15,5 +15,9 @@ module SisGEM
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # formata todas a datas do sistema para o padrão brasileiro
+    Time::DATE_FORMATS[:default] = "%d/%m/%Y %H:%M"
+	Date::DATE_FORMATS[:default] = "%d/%m/%Y"
   end
 end

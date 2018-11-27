@@ -18,7 +18,7 @@
             <tr>
               <th>Termo de Compromisso</th>
               <th>Tipo</th>
-              <th>Dataocorrencia</th>
+              <th>Data da ocorrência</th>
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -28,7 +28,7 @@
               <tr>
                 <td><%= link_to ocorrencium.termo_compromisso.numTermo, termo_compromisso_path("#{ocorrencium.termo_compromisso_id}") %></td>
                 <td><%= ocorrencium.tipo %></td>
-                <td><%= ocorrencium.dataOcorrencia.strftime("%d/%m/%Y") %></td>
+                <td><%= ocorrencium.dataOcorrencia %></td>
                 <td><%= link_to 'Detalhes', ocorrencium, class: "btn-sm btn-info" %></td>
                 <td><%= link_to 'Editar', edit_ocorrencium_path(ocorrencium), class: "btn-sm btn-default" %></td>
                 <td><%= link_to 'Deletar', ocorrencium, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
@@ -36,6 +36,7 @@
             <% end %>
           </tbody>
         </table>
+        <%= paginate @ocorrencia, window: 2 %>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ class CreateTermoCompromissos < ActiveRecord::Migration[5.2]
       t.string :numTermo
       t.date :dataVinculo
       t.date :dataDevolucao
+      t.string :status
       t.belongs_to :equipamento
       t.belongs_to :servidor
 

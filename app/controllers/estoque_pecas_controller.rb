@@ -4,7 +4,7 @@ class EstoquePecasController < ApplicationController
   # GET /estoque_pecas
   # GET /estoque_pecas.json
   def index
-    @estoque_pecas = EstoquePeca.all
+    @estoque_pecas = EstoquePeca.all.order(:id).page(params[:page]).per(10)
   end
 
   # GET /estoque_pecas/1

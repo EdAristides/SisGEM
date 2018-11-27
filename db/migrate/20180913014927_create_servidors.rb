@@ -6,6 +6,7 @@ class CreateServidors < ActiveRecord::Migration[5.2]
       t.string :telefone
       t.string :email
       t.string :cargo
+      t.string :status
 
       t.timestamps
     end

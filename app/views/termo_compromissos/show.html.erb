@@ -3,7 +3,7 @@
 
 	<p>
   		<strong>Termo de Compromisso</strong>
-   		<%= link_to @termo_compromisso.servidor.siape, servidor_path("#{@termo_compromisso.servidor_id}") %>
+   		<%= @termo_compromisso.numTermo %>
   	</p>
 
   	<p>
@@ -11,15 +11,28 @@
    		<%= link_to @termo_compromisso.equipamento.patrimonio, equipamento_path("#{@termo_compromisso.equipamento_id}") %>
   	</p>
 
-	<p>
-	  <strong>Data de vínculo:</strong>
-	  <%= @termo_compromisso.dataVinculo.strftime("%d/%m/%Y") %>
-	</p>
+  	<p>
+  		<strong>Servidor</strong>
+  		<br>
+  		Siape: <%= link_to @termo_compromisso.servidor.siape, servidor_path("#{@termo_compromisso.servidor_id}") %>
+  		<br>
+   		Nome: <%= @termo_compromisso.servidor.nome %>
+  	</p>
 
 	<p>
-	  <strong>Data de devolução:</strong>
-	  <%= @termo_compromisso.dataDevolucao.strftime("%d/%m/%Y") %>
+	  <strong>Data de vínculo:</strong>
+	  <%= @termo_compromisso.dataVinculo %>
 	</p>
+
+<!-- 	<p>
+	  <strong>Data de devolução:</strong>
+	  <%= @termo_compromisso.dataDevolucao %>
+	</p> -->
+
+  <p>
+    <strong>Status:</strong>
+    <%= @termo_compromisso.status %>
+  </p>
 
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">

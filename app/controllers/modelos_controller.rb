@@ -5,12 +5,13 @@ class ModelosController < ApplicationController
   # GET /modelos.json
   def index
     # @modelos = Modelo.all
-    @modelos = Modelo.search(params[:search])
+    @modelos = Modelo.search(params[:search]).order(:marca).page(params[:page]).per(10)
   end
 
   # GET /modelos/1
   # GET /modelos/1.json
   def show
+    
   end
 
   # GET /modelos/new

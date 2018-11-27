@@ -13,29 +13,43 @@
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :equipamento_id, 'Equipamento' %>
-      <%= form.collection_select :equipamento_id, Equipamento.all, :id, :patrimonio %>
+      <%= form.label :equipamento_id, 'Patrimônio' %>
+      <%= form.collection_select :equipamento_id, Equipamento.where(status: 'Doador de Peças'), :id, :patrimonio, :prompt => "Escolha um patrimônio..." %>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :peca_id, 'Peca' %>
-      <%= form.collection_select :peca_id, Peca.all, :id, :nome %>
+      <%= form.collection_select :peca_id, Peca.all, :id, :nome, :prompt => "Escolha uma peça..." %>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
+      <%= form.label :status, 'Status' %>
+      <%= form.select :status, ['Disponível', 'Utilizada'] %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :quantidade, 'Quantidade' %>
+      <%= form.select :quantidade, ['1', '2', '3', '4', '5', '6', '7', '8', '9'] %>
+    </div>
+  </div>
+
+<!--   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
       <%= form.label :quantidade %>
       <%= form.text_field :quantidade, class: "form-control" %>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <%= form.submit %>
+        <%= form.submit 'Salvar', class:"btn btn-default" %>
         <%= link_to 'Voltar', estoque_pecas_path, class:"btn btn-default" %>
       </div>
     </div>

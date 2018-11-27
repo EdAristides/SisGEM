@@ -1,5 +1,5 @@
 class Peca < ApplicationRecord
-	has_many :estoque_pecas
+	has_many :estoque_pecas, dependent: :restrict_with_exception
 	has_many :equipamentos, :through => :estoque_pecas
 
 	def self.search(search)

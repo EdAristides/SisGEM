@@ -4,7 +4,7 @@ class OcorrenciaController < ApplicationController
   # GET /ocorrencia
   # GET /ocorrencia.json
   def index
-    @ocorrencia = Ocorrencium.all
+    @ocorrencia = Ocorrencium.all.order(:termo_compromisso_id).page(params[:page]).per(10)
   end
 
   # GET /ocorrencia/1

@@ -5,7 +5,7 @@ class ServidorsController < ApplicationController
   # GET /servidors.json
   def index
     # @servidors = Servidor.all
-    @servidors = Servidor.search(params[:search])
+    @servidors = Servidor.search(params[:search]).order(:nome).page(params[:page]).per(10)
   end
 
   # GET /servidors/1
@@ -55,11 +55,21 @@ class ServidorsController < ApplicationController
   # DELETE /servidors/1
   # DELETE /servidors/1.json
   def destroy
-    @servidor.destroy
-    respond_to do |format|
-      format.html { redirect_to servidors_url, notice: 'Servidor was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    begin
+      @servidor.destroy
+      # flash[:success] = "successfully destroyed."
+      respond_to do |format|
+        format.html { redirect_to servidors_url, notice: 'Servidor was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    rescue ActiveRecord::DeleteRestrictionError => e
+      @servidor.errors.add(:base, e)
+      # flash[:error] = "#{e}"
+      respond_to do |format|
+        format.html { redirect_to servidors_url, notice: 'Servidor can not be destroyed. There is some dependency.' }
+        format.json { head :no_content }
+      end
+    end 
   end
 
   private
@@ -70,6 +80,6 @@ class ServidorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def servidor_params
-      params.require(:servidor).permit(:siape, :nome, :telefone, :email, :cargo)
+      params.require(:servidor).permit(:siape, :nome, :telefone, :email, :cargo, :status)
     end
 end

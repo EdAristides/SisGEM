@@ -5,7 +5,7 @@ class PecasController < ApplicationController
   # GET /pecas.json
   def index
     # @pecas = Peca.all
-    @pecas = Peca.search(params[:search])
+    @pecas = Peca.search(params[:search]).order(:nome).page(params[:page]).per(10)
   end
 
   # GET /pecas/1
@@ -55,10 +55,20 @@ class PecasController < ApplicationController
   # DELETE /pecas/1
   # DELETE /pecas/1.json
   def destroy
-    @peca.destroy
-    respond_to do |format|
-      format.html { redirect_to pecas_url, notice: 'Peca was successfully destroyed.' }
-      format.json { head :no_content }
+    begin
+      @peca.destroy
+      # flash[:success] = "successfully destroyed."
+      respond_to do |format|
+        format.html { redirect_to pecas_url, notice: 'Peca was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    rescue ActiveRecord::DeleteRestrictionError => e
+      @peca.errors.add(:base, e)
+      # flash[:error] = "#{e}"
+      respond_to do |format|
+        format.html { redirect_to pecas_url, notice: 'Peca can not be destroyed. There is some dependency.' }
+        format.json { head :no_content }
+      end
     end
   end
 

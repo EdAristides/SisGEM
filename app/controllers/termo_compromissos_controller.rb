@@ -5,7 +5,7 @@ class TermoCompromissosController < ApplicationController
   # GET /termo_compromissos.json
   def index
     # @termo_compromissos = TermoCompromisso.all
-    @termo_compromissos = TermoCompromisso.search(params[:search])
+    @termo_compromissos = TermoCompromisso.search(params[:search]).order(:numTermo).page(params[:page]).per(10)
   end
 
   # GET /termo_compromissos/1
@@ -31,6 +31,9 @@ class TermoCompromissosController < ApplicationController
       if @termo_compromisso.save
         format.html { redirect_to @termo_compromisso, notice: 'Termo compromisso was successfully created.' }
         format.json { render :show, status: :created, location: @termo_compromisso }
+        
+        TermoCompromisso.update(@termo_compromisso.id, status: "Em uso")
+        Equipamento.update(@termo_compromisso.equipamento_id, status: "Vinculado")
       else
         format.html { render :new }
         format.json { render json: @termo_compromisso.errors, status: :unprocessable_entity }
@@ -59,6 +62,7 @@ class TermoCompromissosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to termo_compromissos_url, notice: 'Termo compromisso was successfully destroyed.' }
       format.json { head :no_content }
+      Equipamento.update(@termo_compromisso.equipamento_id, status: "Disponível")
     end
   end
 

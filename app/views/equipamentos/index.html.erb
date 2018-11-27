@@ -39,7 +39,7 @@
               <tr>
                 <td><%= link_to "#{equipamento.patrimonio}", equipamento %></td>
                 <td><%= equipamento.serial %></td>
-                <td><%= equipamento.dataAquisicao.strftime("%d/%m/%Y") %></td>
+                <td><%= equipamento.dataAquisicao %></td>
                 <td><%= equipamento.status %></td>
                 <td><%= link_to equipamento.modelo.marca, modelo_path("#{equipamento.modelo_id}") %></td>
                 <td><%= link_to 'Manutenções', equipamento_manutencaos_path(equipamento), class: "btn-sm btn-warning" %></td>
@@ -50,6 +50,7 @@
             <% end %>
           </tbody>
         </table>
+        <%= paginate @equipamentos, window: 2 %>
       </div>
     </div>
   </div>

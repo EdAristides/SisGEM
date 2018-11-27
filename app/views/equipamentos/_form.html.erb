@@ -13,7 +13,7 @@
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :patrimônio %>
+      <%= form.label :patrimonio %>
       <%= form.text_field :patrimonio, class: "form-control" %>
     </div>
   </div>
@@ -31,18 +31,56 @@
       <%= form.select :status, ['Disponível', 'Vinculado', 'Transferido', 'Desaparecido', 'Furtado', 'Inutilizável', 'Doador de Peças', 'Em Manutenção'] %>
     </div>
   </div>
+
+<!--   <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+        <div class="form-group">
+          <%= form.label :tipo, 'Tipo do Equipamento' %><br />
+          <label class="radio-inline"><%= form.radio_button :tipo, 'Notebook', :checked => true %>Notebook</label>
+          <label class="radio-inline"><%= form.radio_button :tipo, 'Tablet' %>Tablet</label>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :modelo_id, 'Modelo' %>
-      <%= form.collection_select :modelo_id, Modelo.all, :id, :marca %>
+      <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Notebook'), :id, :marca %>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+        <div class="form-group" >
+          <%= form.label :tipo, 'Tipo do Equipamento' %><br />
+          <label class="radio-inline" onclick="teste()"><%= form.radio_button :tipo, 'Notebook', id:'note', :checked => true %>Notebook</label>
+          <label class="radio-inline" onclick="teste2()"><%= form.radio_button :tipo, 'Tablet', id:'tablet'%>Tablet</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="noteSelect" class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :modelo_id, 'Modelo' %>
+      <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Notebook'), :id, :marca %>
+    </div>
+  </div>
+
+  <div id="tabletSelect" class="hidden-lg hidden-md hidden-sm hidden-xs text-left">
+    <div class="form-group">
+      <%= form.label :modelo_id, 'Modelo' %>
+      <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Tablet'), :id, :marca %>
     </div>
   </div>
 
   <div class="col-md-6 col-sm-6 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :dataAquisicao, 'Data de Aquisição' %>
-      <%= form.date_select :dataAquisicao %>
+      <%= form.date_select :dataAquisicao, :start_year => Date.current.year, :end_year => 2010 %>
     </div>
   </div>
 
@@ -55,3 +93,22 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  function teste(){
+    if($( "#note" ).prop("checked", true)){
+      $( "#noteSelect" ).removeClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
+      $( "#noteSelect" ).addClass( "col-md-4 col-sm-4 col-xs-12" );
+      $( "#tabletSelect" ).removeClass( "col-md-4 col-sm-4 col-xs-12" );
+      $( "#tabletSelect" ).addClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
+    }
+  }
+  function teste2(){
+    if($( "#tablet" ).prop("checked", true)){
+      $( "#noteSelect" ).addClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
+      $( "#noteSelect" ).removeClass( "col-md-4 col-sm-4 col-xs-12" );
+      $( "#tabletSelect" ).addClass( "col-md-4 col-sm-4 col-xs-12" );
+      $( "#tabletSelect" ).removeClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
+    }
+  }
+</script>

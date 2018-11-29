@@ -4,7 +4,11 @@ class EstoquePecasController < ApplicationController
   # GET /estoque_pecas
   # GET /estoque_pecas.json
   def index
-    @estoque_pecas = EstoquePeca.all.order(:id).page(params[:page]).per(10)
+    @estoque_pecas = EstoquePeca.where("status = 'Disponível'").page(params[:page]).per(10)
+  end
+
+  def filed
+    @estoque_pecas = EstoquePeca.where("status = 'Utilizada'").page(params[:page]).per(10)
   end
 
   # GET /estoque_pecas/1
@@ -67,8 +71,12 @@ class EstoquePecasController < ApplicationController
       @estoque_peca = EstoquePeca.find(params[:id])
     end
 
+    def get_estoque_peca
+
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def estoque_peca_params
-      params.require(:estoque_peca).permit(:equipamento_id, :peca_id, :quantidade)
+      params.require(:estoque_peca).permit(:equipamento_id, :peca_id, :quantidade, :status)
     end
 end

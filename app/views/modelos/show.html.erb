@@ -23,13 +23,14 @@
 
   <p>
     <strong>Equipamentos (patrimônio):</strong>
-    <% if @modelo.equipamentos.empty? %>
+    <% if @equipamentos.empty? %>
       <p>Nenhum equipamento vinculado ao modelo</p>
     <% else %>
-      <% @modelo.equipamentos.each do |equipamento| %>
+      <% @equipamentos.each do |equipamento| %>
         <br><%= link_to equipamento.patrimonio, equipamento_path("#{equipamento.id}") %>
       <% end %>
     <% end %>
+    <%= paginate @equipamentos, window: 2 %>
   </p>
 
   <div class="row">

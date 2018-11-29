@@ -11,7 +11,7 @@ class ModelosController < ApplicationController
   # GET /modelos/1
   # GET /modelos/1.json
   def show
-    
+    @equipamentos = Equipamento.where(modelo_id: @modelo.id).order(:patrimonio).page(params[:page]).per(10)
   end
 
   # GET /modelos/new

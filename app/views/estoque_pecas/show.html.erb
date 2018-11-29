@@ -3,12 +3,12 @@
 
   <p>
     <strong>Equipamento:</strong>
-    <%= @estoque_peca.equipamento_id %>
+    <%= @estoque_peca.equipamento.patrimonio %>
   </p>
 
   <p>
     <strong>Peça:</strong>
-    <%= @estoque_peca.peca_id %>
+    <%= @estoque_peca.peca.nome + ' - ' + @estoque_peca.peca.caracteristica %>
   </p>
 
   <p>

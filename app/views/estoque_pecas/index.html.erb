@@ -7,6 +7,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 text-right">
       <%= link_to 'Novo Estoque de Peça', new_estoque_peca_path, class:"btn btn-default" %>
+      <%= link_to 'Peças Utilizadas', filed_estoque_pecas_path, class:"btn btn-default" %>
     </div>
   </div>
 
@@ -25,11 +26,12 @@
           </thead>
 
           <tbody>
-
             <% @estoque_pecas.each do |estoque_peca| %>
               <tr>
                 <td><%= link_to estoque_peca.equipamento.patrimonio, equipamento_path("#{estoque_peca.equipamento_id}") %></td>
-                <td><%= link_to estoque_peca.peca.nome, peca_path("#{estoque_peca.peca_id}") %></td>
+                <td>
+                  <%= link_to estoque_peca.peca.nome + ' - ' + estoque_peca.peca.caracteristica, peca_path("#{estoque_peca.peca_id}") %>
+                </td>
                 <td><%= estoque_peca.status %></td>
                 <td><%= estoque_peca.quantidade %></td>
                 <td><%= link_to 'Detalhes', estoque_peca, class: "btn-sm btn-info" %></td>

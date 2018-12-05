@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  devise_for :users
+  resources :users
+  resources :home
+  # get 'home/index'
   resources :ocorrencia
   resources :termo_compromissos
   resources :manutencaos
@@ -12,8 +15,6 @@ Rails.application.routes.draw do
   	match 'manutencaos' => "equipamentos#manutencao", via: [:get]
   end
   resources :servidors
-
-  get "home/index"
 
   root "home#index"
 end

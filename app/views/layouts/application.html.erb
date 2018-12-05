@@ -54,6 +54,7 @@
                         <li><a href="/servidors"><div class="icon servidores"></div><h3> &nbsp;Servidores</h3></a></li>
                         <li><a href="/termo_compromissos"><div class="icon termos"></div><h3> &nbsp;Termos de Compromisso</h3></a></li>
                         <li><a href="/ocorrencia"><div class="icon ocorrencias"></div><h3> &nbsp;Ocorrências</h3></a></li>
+                        <li><a href="/users"><div class="icon users"></div><h3> &nbsp;Usuários</h3></a></li>
                     </ul>
                 </div>
             </div>
@@ -79,5 +80,13 @@
         $(".telefone").mask("(00) 0000-0000");
         $(".celular").mask("(00) 00000-0000");
     </script>
+
+    <% if user_signed_in? %>
+        <%= current_user.name %>
+        <br>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <% else %>
+        <%= link_to('Login', new_user_session_path)  %>
+    <% end %>
   </body>
 </html>

@@ -15,6 +15,7 @@ class EquipamentosController < ApplicationController
   end
 
   def manutencao
+    @equipamento = Equipamento.find(params[:equipamento_id])
     @equipamento_manutencaos = Manutencao.where(["equipamento_id = ?", params[:equipamento_id]]).order(:numOrdem).page(params[:page]).per(10)
   end
 

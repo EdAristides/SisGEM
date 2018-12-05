@@ -6,7 +6,9 @@
 <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-      <%= link_to 'Nova Manutenção', new_manutencao_path, class:"btn btn-default" %>
+      <% if can? :create, Manutencao %>
+        <%= link_to 'Nova Manutenção', new_manutencao_path, class:"btn btn-default" %>
+      <% end %>
     </div>
   </div>
 

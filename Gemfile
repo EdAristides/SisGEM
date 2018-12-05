@@ -77,3 +77,7 @@ gem 'loofah', ">= 2.2.3"
 
 # Paginação
 gem 'kaminari'
+
+# Autenticação
+gem 'devise'
+gem 'cancancan'

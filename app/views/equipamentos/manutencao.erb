@@ -1,6 +1,6 @@
 <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
   <p id="notice"><%= notice %></p>
-  <h1>Manutenções</h1>
+  <h1>Manutenções do Patrimônio <%= @equipamento.patrimonio %></h1>
 </div>
 
 <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
@@ -23,17 +23,17 @@
               </tr>
             </thead>
 
-            <% @equipamento_manutencaos.each do |manutencaos| %>
+            <% @equipamento_manutencaos.each do |manutencao| %>
                 <tr>
-                  <td><%= link_to "#{manutencaos.numOrdem}", manutencaos %></td>
-                  <td><%= link_to manutencaos.equipamento.patrimonio, equipamento_path("#{manutencaos.equipamento_id}") %></td>
-                  <td><%= manutencaos.descricao %></td>
-                  <td><%= manutencaos.dataEntrada %></td>
-                  <td><%= manutencaos.dataSaida %></td>
-                  <td><%= manutencaos.status %></td>
-                  <td><%= link_to 'Detalhes', manutencaos, class: "btn-sm btn-info" %></td>
-                  <td><%= link_to 'Editar', edit_manutencao_path(manutencaos), class: "btn-sm btn-default" %></td>
-                  <td><%= link_to 'Deletar', manutencaos, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
+                  <td><%= link_to "#{manutencao.numOrdem}", manutencao %></td>
+                  <td><%= link_to manutencao.equipamento.patrimonio, equipamento_path("#{manutencao.equipamento_id}") %></td>
+                  <td><%= manutencao.descricao %></td>
+                  <td><%= manutencao.dataEntrada %></td>
+                  <td><%= manutencao.dataSaida %></td>
+                  <td><%= manutencao.status %></td>
+                  <td><%= link_to 'Detalhes', manutencao, class: "btn-sm btn-info" %></td>
+                  <td><%= link_to 'Editar', edit_manutencao_path(manutencao), class: "btn-sm btn-default" %></td>
+                  <td><%= link_to 'Deletar', manutencao, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
                 </tr>
               <% end %>
             </tbody>

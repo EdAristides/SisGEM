@@ -1,0 +1,10 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+  <p id="notice"><%= notice %></p>
+  <p>Welcome <%= @email %>!</p>
+</div>
+
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+	<p>You can confirm your account email through the link below:</p>
+
+	<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>

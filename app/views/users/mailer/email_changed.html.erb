@@ -1,7 +1,12 @@
-<p>Hello <%= @email %>!</p>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+  <p id="notice"><%= notice %></p>
+  <p>Olá <%= @email %>!</p>
+</div>
 
-<% if @resource.try(:unconfirmed_email?) %>
-  <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
-<% else %>
-  <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
-<% end %>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+	<% if @resource.try(:unconfirmed_email?) %>
+	  <p>Estamos entrando em contato para notificá-lo de que seu e-mail está sendo alterado para <%= @resource.unconfirmed_email %>.</p>
+	<% else %>
+	  <p>Estamos entrando em contato para notificá-lo de que seu e-mail foi alterado para <%= @resource.email %>.</p>
+	<% end %>
+</div>

@@ -9,4 +9,8 @@ class Servidor < ApplicationRecord
 	      all
 	    end
   	end
+
+  	def nome_e_siape
+    	"#{nome} : #{siape}"
+  	end
 end

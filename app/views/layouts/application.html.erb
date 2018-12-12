@@ -39,28 +39,32 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <span id="resp" class="glyphicon glyphicon-menu-hamburger" onclick="myFunction()"></span>
-        <div class="row mainrow">
-            <div class="col-md-2 col-sm-2 col-xs-4">
-                <div id="affix" class="affix col-md-12 col-sm-12 col-xs-12">
-                    <ul class="nav nav-stacked text-left">
-                        <li><a href="/"><div class="icon index"></div><h3> &nbsp;Index</h3></a></li>
-                        <li><a href="/modelos"><div class="icon modelos"></div><h3> &nbsp;Modelos</h3></a></li>
-                        <li><a href="/equipamentos"><div class="icon equipamentos"></div><h3> &nbsp;Equipamentos</h3></a></li>
-                        <li><a href="/pecas"><div class="icon pecas"></div><h3> &nbsp;Peças</h3></a></li>
-                        <li><a href="/estoque_pecas"><div class="icon estoque_pecas"></div><h3> &nbsp;Peças Disponíveis</h3></a></li>
-                        <li><a href="/manutencaos"><div class="icon manutencao"></div><h3> &nbsp;Manutenção</h3></a></li>
-                        <li><a href="/servidors"><div class="icon servidores"></div><h3> &nbsp;Servidores</h3></a></li>
-                        <li><a href="/termo_compromissos"><div class="icon termos"></div><h3> &nbsp;Termos de Compromisso</h3></a></li>
-                        <li><a href="/ocorrencia"><div class="icon ocorrencias"></div><h3> &nbsp;Ocorrências</h3></a></li>
-                        <li><a href="/users"><div class="icon users"></div><h3> &nbsp;Usuários</h3></a></li>
-                    </ul>
+    <% if user_signed_in? %>
+        <div class="container-fluid">
+            <span id="resp" class="glyphicon glyphicon-menu-hamburger" onclick="myFunction()"></span>
+            <div class="row mainrow">
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div id="affix" class="affix col-md-12 col-sm-12 col-xs-12">
+                        <ul class="nav nav-stacked text-left">
+                            <li><a href="/"><div class="icon index"></div><h3> &nbsp;Index</h3></a></li>
+                            <li><a href="/modelos"><div class="icon modelos"></div><h3> &nbsp;Modelos</h3></a></li>
+                            <li><a href="/equipamentos"><div class="icon equipamentos"></div><h3> &nbsp;Equipamentos</h3></a></li>
+                            <li><a href="/pecas"><div class="icon pecas"></div><h3> &nbsp;Peças</h3></a></li>
+                            <li><a href="/estoque_pecas"><div class="icon estoque_pecas"></div><h3> &nbsp;Peças Disponíveis</h3></a></li>
+                            <li><a href="/manutencaos"><div class="icon manutencao"></div><h3> &nbsp;Manutenção</h3></a></li>
+                            <li><a href="/servidors"><div class="icon servidores"></div><h3> &nbsp;Servidores</h3></a></li>
+                            <li><a href="/termo_compromissos"><div class="icon termos"></div><h3> &nbsp;Termos de Compromisso</h3></a></li>
+                            <li><a href="/ocorrencia"><div class="icon ocorrencias"></div><h3> &nbsp;Ocorrências</h3></a></li>
+                            <% if current_user.funcao == "Coordenador" %>
+                                <li><a href="/users"><div class="icon users"></div><h3> &nbsp;Usuários</h3></a></li>
+                            <% end %>
+                            <!-- <li><a href="/users"><div class="icon users"></div><h3> &nbsp;Usuários</h3></a></li> -->
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    <% end %>
     <div id="conteudo">
       <%= yield %>
     </div>
@@ -81,12 +85,11 @@
         $(".celular").mask("(00) 00000-0000");
     </script>
 
+    <p class="navbar-text pull-right">
     <% if user_signed_in? %>
-        <%= current_user.name %>
-        <br>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    <% else %>
-        <%= link_to('Login', new_user_session_path)  %>
+        Logado como: <strong><%= current_user.email %></strong>.
+        <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
     <% end %>
   </body>
 </html>

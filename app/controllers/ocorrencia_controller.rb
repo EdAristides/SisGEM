@@ -1,4 +1,5 @@
 class OcorrenciaController < ApplicationController
+  load_and_authorize_resource
   before_action :set_ocorrencium, only: [:show, :edit, :update, :destroy]
 
   # GET /ocorrencia

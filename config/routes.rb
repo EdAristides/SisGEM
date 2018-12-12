@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users
-  resources :home
-  # get 'home/index'
+  resources :users, only: [:index, :create, :edit, :show, :update, :destroy]
+  match 'index' => "home#index", via: [:get]
   resources :ocorrencia
   resources :termo_compromissos
   resources :manutencaos

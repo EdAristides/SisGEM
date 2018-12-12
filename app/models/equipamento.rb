@@ -13,4 +13,13 @@ class Equipamento < ApplicationRecord
 	      all
 	    end
   	end
+
+  	def self.notebook_disponivel
+  		# Buscar equipamentos disponíveis que o tipo do modelo seja um notebook
+		joins(:modelo).where(:modelos => {tipo: 'Notebook'}, status: 'Disponível')
+  	end
+
+  	def self.tablet_disponivel
+		joins(:modelo).where(:modelos => {tipo: 'Tablet'}, status: 'Disponível')
+  	end
 end

@@ -13,15 +13,22 @@
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :admin %>
-      <%= form.check_box :admin %>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :funcao, 'Função' %>
+      <%= form.select :funcao, ['Coordenador', 'Bolsista Pleno', 'Bolsista Júnior'] %>
     </div>
   </div>
 

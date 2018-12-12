@@ -1,4 +1,5 @@
 class EstoquePecasController < ApplicationController
+  load_and_authorize_resource
   before_action :set_estoque_peca, only: [:show, :edit, :update, :destroy]
 
   # GET /estoque_pecas

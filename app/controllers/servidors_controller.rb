@@ -1,4 +1,5 @@
 class ServidorsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_servidor, only: [:show, :edit, :update, :destroy]
 
   # GET /servidors

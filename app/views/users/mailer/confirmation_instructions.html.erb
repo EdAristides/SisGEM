@@ -1,5 +1,11 @@
-<p>Welcome <%= @email %>!</p>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+  <p id="notice"><%= notice %></p>
+  <p>Bem-vindo <%= @email %>!</p>
+</div>
 
-<p>You can confirm your account email through the link below:</p>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+	<p>
+Pode confirmar o email da sua conta através do link abaixo:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+	<p><%= link_to 'Confirmar minha conta', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>

@@ -2,19 +2,43 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.admin?
+    if user.funcao == "Coordenador"
         can :manage, :all
     else
-        can [:read], Equipamento
-        can [:read], EstoquePeca
-        can [:read], Manutencao
-        can [:read], Modelo
-        can [:read], Ocorrencium
-        can [:create, :read, :update, :destroy], Peca
-        can [:read], Servidor
-        can [:read], TermoCompromisso
-        can [:read], User
+        if user.funcao == "Bolsista Pleno"
+            can :manage, Equipamento
+            can :manage, EstoquePeca
+            can :manage, Manutencao
+            can :manage, Modelo
+            can :manage, Ocorrencium
+            can :manage, Peca
+            can :manage, Servidor
+            can :manage, TermoCompromisso
+        else
+            if user.funcao == "Bolsista Júnior"
+                can [:read], Equipamento
+                can [:read], EstoquePeca
+                can [:create, :read, :update], Manutencao
+                can [:read], Modelo
+                can [:read], Ocorrencium
+                can [:read], Peca
+                can [:read], Servidor
+                can [:read], TermoCompromisso
+            else
+                can [:read], Equipamento
+                can [:read], EstoquePeca
+                can [:read], Manutencao
+                can [:read], Modelo
+                can [:read], Ocorrencium
+                can [:read], Peca
+                can [:read], Servidor
+                can [:read], TermoCompromisso
+                # can :manage, User
+            end
+        end
     end
+
+    # As funções que devem existir no sistema: Coordenador, Bolsista Junior, Bolsista Pleno, Sênior e Master)
 
     # Define abilities for the passed in user here. For example:
     #

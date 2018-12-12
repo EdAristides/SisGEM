@@ -56,8 +56,8 @@
       <div class="col-md-4 col-sm-4 col-xs-12 text-left">
         <div class="form-group" >
           <%= form.label :tipo, 'Tipo do Equipamento' %><br />
-          <label class="radio-inline" onclick="teste()"><%= form.radio_button :tipo, 'Notebook', id:'note', :checked => true %>Notebook</label>
-          <label class="radio-inline" onclick="teste2()"><%= form.radio_button :tipo, 'Tablet', id:'tablet'%>Tablet</label>
+          <label class="radio-inline" onclick="notebook()"><%= form.radio_button :tipo, 'Notebook', id:'note', :checked => true %>Notebook</label>
+          <label class="radio-inline" onclick="tablet()"><%= form.radio_button :tipo, 'Tablet', id:'tablet'%>Tablet</label>
         </div>
       </div>
     </div>
@@ -95,7 +95,7 @@
 <% end %>
 
 <script>
-  function teste(){
+  function notebook(){
     if($( "#note" ).prop("checked", true)){
       $( "#noteSelect" ).removeClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
       $( "#noteSelect" ).addClass( "col-md-4 col-sm-4 col-xs-12" );
@@ -103,7 +103,7 @@
       $( "#tabletSelect" ).addClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
     }
   }
-  function teste2(){
+  function tablet(){
     if($( "#tablet" ).prop("checked", true)){
       $( "#noteSelect" ).addClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
       $( "#noteSelect" ).removeClass( "col-md-4 col-sm-4 col-xs-12" );

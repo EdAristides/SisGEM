@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_171905) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.boolean "admin"
+    t.string "funcao"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

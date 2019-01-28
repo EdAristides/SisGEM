@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div id="tabletSelect" class="hidden-lg hidden-md hidden-sm hidden-xs text-left">
+  <div id="tabletSelect" class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :equipamento_id, 'Patrimônio' %>
       <%= form.collection_select :equipamento_id, Equipamento.tablet_disponivel, :id, :patrimonio, :prompt => "Escolha um patrimônio..." %>
@@ -76,20 +76,22 @@
 <% end %> 
 
 <script>
+  $( document ).ready(function() {
+    Htmlnote = $( "#noteSelect" );
+    Htmltablet = $( "#tabletSelect" );
+    $( "#tabletSelect" ).remove();
+  });
+  
   function notebook(){
     if($( "#note" ).prop("checked", true)){
-      $( "#noteSelect" ).removeClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
-      $( "#noteSelect" ).addClass( "col-md-4 col-sm-4 col-xs-12" );
-      $( "#tabletSelect" ).removeClass( "col-md-4 col-sm-4 col-xs-12" );
-      $( "#tabletSelect" ).addClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
+      $( "#tabletSelect" ).before(Htmlnote);
+      $( "#tabletSelect" ).remove();
     }
   }
   function tablet(){
     if($( "#tablet" ).prop("checked", true)){
-      $( "#noteSelect" ).addClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
-      $( "#noteSelect" ).removeClass( "col-md-4 col-sm-4 col-xs-12" );
-      $( "#tabletSelect" ).addClass( "col-md-4 col-sm-4 col-xs-12" );
-      $( "#tabletSelect" ).removeClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
+      $( "#noteSelect" ).before(Htmltablet);
+      $( "#noteSelect" ).remove();
     }
   }
 </script>

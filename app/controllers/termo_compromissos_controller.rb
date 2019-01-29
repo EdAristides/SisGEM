@@ -12,6 +12,7 @@ class TermoCompromissosController < ApplicationController
   # GET /termo_compromissos/1
   # GET /termo_compromissos/1.json
   def show
+    @comments = @termo_compromisso.comments.order("id DESC").page(params[:page]).per(3)
   end
 
   # GET /termo_compromissos/new
@@ -30,11 +31,11 @@ class TermoCompromissosController < ApplicationController
 
     respond_to do |format|
       if @termo_compromisso.save
-        format.html { redirect_to @termo_compromisso, notice: 'Termo compromisso was successfully created.' }
-        format.json { render :show, status: :created, location: @termo_compromisso }
-        
         TermoCompromisso.update(@termo_compromisso.id, status: "Em uso")
         Equipamento.update(@termo_compromisso.equipamento_id, status: "Vinculado")
+        
+        format.html { redirect_to @termo_compromisso, notice: 'Termo compromisso was successfully created.' }
+        format.json { render :show, status: :created, location: @termo_compromisso }
       else
         format.html { render :new }
         format.json { render json: @termo_compromisso.errors, status: :unprocessable_entity }

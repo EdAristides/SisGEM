@@ -13,6 +13,7 @@ class EquipamentosController < ApplicationController
   # GET /equipamentos/1
   # GET /equipamentos/1.json
   def show
+    @comments = @equipamento.comments.order("id DESC").page(params[:page]).per(3)
   end
 
   def manutencao

@@ -5,6 +5,7 @@ class Equipamento < ApplicationRecord
 	has_many :manutencaos
 	has_many :servidors, :through => :termo_compromisso
 	has_many :termo_compromisso, dependent: :restrict_with_exception
+	has_many :comments, as: :commentable
 
 	def self.search(search)
 	    if search

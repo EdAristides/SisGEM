@@ -14,6 +14,7 @@ class ManutencaosController < ApplicationController
   # GET /manutencaos/1
   # GET /manutencaos/1.json
   def show
+    @comments = @manutencao.comments.order("id DESC").page(params[:page]).per(3)
   end
 
   # GET /manutencaos/new

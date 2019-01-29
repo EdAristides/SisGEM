@@ -22,4 +22,17 @@
 	  <%= link_to 'Voltar', "javascript:window.history.go(-1)", class:"btn btn-default" %>
 	</div>
   </div>
+
+  <h3>Comentários</h3>
+  <% @comments.each do |comment| %>
+    <div class="well">
+      <%= comment.user.name %> - <%= comment.created_at %>
+      <p>
+          <%= comment.body %>
+      </div>
+  <% end %>
+  <%= paginate @comments, window: 2 %>
+
+  <%= render partial: "comments/form", locals: {commentable: @ocorrencium} %>
+  <!-- <%= render partial: "comments/comments", locals: {commentable: @ocorrencium} %>-->
 </div>

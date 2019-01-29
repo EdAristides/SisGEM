@@ -95,22 +95,20 @@
 <% end %>
 
 <script>
-  $( document ).ready(function() {
-    Htmlnote = $( "#noteSelect" );
-    Htmltablet = $( "#tabletSelect" );
-    $( "#tabletSelect" ).remove();
-  });
-  
   function notebook(){
     if($( "#note" ).prop("checked", true)){
-      $( "#tabletSelect" ).before(Htmlnote);
-      $( "#tabletSelect" ).remove();
+      $( "#noteSelect" ).removeClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
+      $( "#noteSelect" ).addClass( "col-md-4 col-sm-4 col-xs-12" );
+      $( "#tabletSelect" ).removeClass( "col-md-4 col-sm-4 col-xs-12" );
+      $( "#tabletSelect" ).addClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
     }
   }
   function tablet(){
     if($( "#tablet" ).prop("checked", true)){
-      $( "#noteSelect" ).before(Htmltablet);
-      $( "#noteSelect" ).remove();
+      $( "#noteSelect" ).addClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
+      $( "#noteSelect" ).removeClass( "col-md-4 col-sm-4 col-xs-12" );
+      $( "#tabletSelect" ).addClass( "col-md-4 col-sm-4 col-xs-12" );
+      $( "#tabletSelect" ).removeClass( "hidden-lg hidden-md hidden-sm hidden-xs" );
     }
   }
 </script>

@@ -1,7 +1,0 @@
-<% commentable.comments.reverse_each do |comment| %>
-	<div class="well">
-		<%= comment.user.name %> - <%= comment.created_at %>
-		<p>
-        <%= comment.body %>
-    </div>
-<% end %>

@@ -11,7 +11,6 @@ class OcorrenciaController < ApplicationController
   # GET /ocorrencia/1
   # GET /ocorrencia/1.json
   def show
-    @comments = @ocorrencium.comments.order("id DESC").page(params[:page]).per(3)
   end
 
   # GET /ocorrencia/new

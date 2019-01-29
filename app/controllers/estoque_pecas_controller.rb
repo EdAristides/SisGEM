@@ -15,7 +15,6 @@ class EstoquePecasController < ApplicationController
   # GET /estoque_pecas/1
   # GET /estoque_pecas/1.json
   def show
-    @comments = @estoque_peca.comments.order("id DESC").page(params[:page]).per(3)
   end
 
   # GET /estoque_pecas/new

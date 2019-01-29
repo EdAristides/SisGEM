@@ -12,7 +12,6 @@ class ServidorsController < ApplicationController
   # GET /servidors/1
   # GET /servidors/1.json
   def show
-    @comments = @servidor.comments.order("id DESC").page(params[:page]).per(3)
   end
 
   # GET /servidors/new

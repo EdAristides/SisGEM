@@ -13,7 +13,6 @@ class ModelosController < ApplicationController
   # GET /modelos/1.json
   def show
     @equipamentos = Equipamento.where(modelo_id: @modelo.id).order(:patrimonio).page(params[:page]).per(10)
-    @comments = @modelo.comments.order("id DESC").page(params[:page]).per(3)
   end
 
   # GET /modelos/new

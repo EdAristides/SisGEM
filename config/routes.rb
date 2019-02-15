@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   end
   resources :termo_compromissos do
     resources :comments, module: :termo_compromissos
+    member do
+      # /agreements/:id/export
+      get 'export'
+    end
   end
   resources :manutencaos do
     resources :comments, module: :manutencaos

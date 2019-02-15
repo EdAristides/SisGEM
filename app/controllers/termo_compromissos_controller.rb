@@ -1,6 +1,8 @@
 class TermoCompromissosController < ApplicationController
   load_and_authorize_resource
-  before_action :set_termo_compromisso, only: [:show, :edit, :update, :destroy]
+  before_action :set_termo_compromisso, only: [:show, :edit, :update, :destroy, :export]
+  # Nós incluimos aqui a lib que vamos criar chamada generate_pdf.rb
+  require './lib/generate_pdf'
 
   # GET /termo_compromissos
   # GET /termo_compromissos.json
@@ -66,6 +68,11 @@ class TermoCompromissosController < ApplicationController
       format.json { head :no_content }
       Equipamento.update(@termo_compromisso.equipamento_id, status: "Disponível")
     end
+  end
+
+  def export
+    GeneratePdf::termo_compromisso(@termo_compromisso.numTermo, @termo_compromisso.equipamento.patrimonio, @termo_compromisso.equipamento.serial, @termo_compromisso.equipamento.modelo.configuracao, @termo_compromisso.equipamento.modelo.valor, @termo_compromisso.servidor.nome, @termo_compromisso.servidor.siape, @termo_compromisso.servidor.telefone, @termo_compromisso.servidor.email, @termo_compromisso.dataVinculo, @termo_compromisso.dataDevolucao)
+    redirect_to '/termo_compromisso.pdf'
   end
 
   private

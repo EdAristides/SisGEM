@@ -43,10 +43,13 @@
   <h3>Comentários</h3>
   <% @comments.each do |comment| %>
     <div class="well">
-      <%= comment.user.name %> - <%= comment.created_at %>
+      <%= comment.user.name %> - <%= comment.created_at %> - 
+      <% if current_user.id == comment.user.id %>
+        <%= link_to 'Apagar', comment, method: :delete, data: { confirm: 'Tem certeza?' } %>
+      <% end %>
       <p>
-          <%= comment.body %>
-      </div>
+      <%= comment.body %>
+    </div>
   <% end %>
   <%= paginate @comments, window: 2 %>
 

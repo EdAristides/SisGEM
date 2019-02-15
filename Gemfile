@@ -81,3 +81,8 @@ gem 'kaminari'
 # Autenticação
 gem 'devise'
 gem 'cancancan'
+
+# Gem para gerar os pdfs
+gem 'prawn-rails'
+# Gem para gerar os gráficos
+gem 'gruff'

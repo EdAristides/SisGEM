@@ -14,6 +14,7 @@ class Ability
             can :manage, Peca
             can :manage, Servidor
             can :manage, TermoCompromisso
+            can [:read], Comment
         else
             if user.funcao == "Bolsista Júnior"
                 can [:read], Equipamento
@@ -24,6 +25,7 @@ class Ability
                 can [:read], Peca
                 can [:read], Servidor
                 can [:read], TermoCompromisso
+                can [:read], Comment
             else
                 can [:read], Equipamento
                 can [:read], EstoquePeca
@@ -33,6 +35,7 @@ class Ability
                 can [:read], Peca
                 can [:read], Servidor
                 can [:read], TermoCompromisso
+                can [:read], Comment
                 # can :manage, User
             end
         end

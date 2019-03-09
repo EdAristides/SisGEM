@@ -6,12 +6,13 @@ class PecasController < ApplicationController
   # GET /pecas.json
   def index
     # @pecas = Peca.all
-    @pecas = Peca.search(params[:search]).order(:nome).page(params[:page]).per(10)
+    @pecas = Peca.search(params[:search]).order(:nome).page(params[:page]).per(3)
   end
 
   # GET /pecas/1
   # GET /pecas/1.json
   def show
+    @comments = @peca.comments.order("id DESC").page(params[:page]).per(3)
   end
 
   # GET /pecas/new

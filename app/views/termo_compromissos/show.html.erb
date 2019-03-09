@@ -8,7 +8,8 @@
 
   	<p>
   		<strong>Equipamento</strong>
-   		<%= link_to @termo_compromisso.equipamento.patrimonio, equipamento_path("#{@termo_compromisso.equipamento_id}") %>
+      <br>
+   		Patrimônio: <%= link_to @termo_compromisso.equipamento.patrimonio, equipamento_path("#{@termo_compromisso.equipamento_id}") %>
   	</p>
 
   	<p>
@@ -36,8 +37,25 @@
 
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-      		<%= link_to 'Editar', edit_termo_compromisso_path(@termo_compromisso), class:"btn btn-primary"%>
+      	<%= link_to 'Editar', edit_termo_compromisso_path(@termo_compromisso), class:"btn btn-primary"%>
+        <%= link_to 'Imprimir', export_termo_compromisso_path(@termo_compromisso), class:"btn btn-primary"%>
 	  		<%= link_to 'Voltar', "javascript:window.history.go(-1)", class:"btn btn-default" %>
 		</div>
-  	</div>
+  </div>
+
+  <h3>Comentários</h3>
+  <% @comments.each do |comment| %>
+    <div class="well">
+      <%= comment.user.name %> - <%= comment.created_at %> - 
+      <% if current_user.id == comment.user.id %>
+        <%= link_to 'Apagar', comment, method: :delete, data: { confirm: 'Tem certeza?' } %>
+      <% end %>
+      <p>
+      <%= comment.body %>
+    </div>
+  <% end %>
+  <%= paginate @comments, window: 2 %>
+
+  <%= render partial: "comments/form", locals: {commentable: @termo_compromisso} %>
+  <!-- <%= render partial: "comments/comments", locals: {commentable: @termo_compromisso} %>-->
 </div>

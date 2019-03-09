@@ -27,4 +27,20 @@
       <%= link_to 'Voltar', estoque_pecas_path, class:"btn btn-default"%>
     </div>
   </div>
+
+  <h3>Comentários</h3>
+  <% @comments.each do |comment| %>
+    <div class="well">
+      <%= comment.user.name %> - <%= comment.created_at %> - 
+      <% if current_user.id == comment.user.id %>
+        <%= link_to 'Apagar', comment, method: :delete, data: { confirm: 'Tem certeza?' } %>
+      <% end %>
+      <p>
+      <%= comment.body %>
+    </div>
+  <% end %>
+  <%= paginate @comments, window: 2 %>
+
+  <%= render partial: "comments/form", locals: {commentable: @estoque_peca} %>
+  <!-- <%= render partial: "comments/comments", locals: {commentable: @estoque_peca} %>-->
 </div>

@@ -15,8 +15,20 @@ body.login {
     background: -webkit-linear-gradient(top, #08091c 0%,#050646 17%,#040759 34%,#06136d 51%,#071b7b 68%,#092d85 85%,#092d85 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #08091c 0%,#050646 17%,#040759 34%,#06136d 51%,#071b7b 68%,#092d85 85%,#092d85 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08091c', endColorstr='#092d85',GradientType=0 ); /* IE6-9 */
-    padding: 150px 0px 25px;
+    /*padding: 150px 0px 25px;*/
     overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+    padding-top: 52px;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body.login h1{
+    color: #fff;
 }
 
 #login-form {
@@ -419,6 +431,11 @@ footer h3{
     margin-bottom: 2%;
 }
 
+#conteudo .alert{
+    position: inherit;
+    z-index: 1;
+}
+
     #conteudo ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: #B5BCCB;
         font-family: 'Ubuntu', sans-serif;
@@ -525,6 +542,8 @@ footer h3{
 }
 
 .conteudoInf .form-control {
+    display: inline-block;
+    width: initial;
 }
 
 #conteudo .conteudoSup .btn-success {

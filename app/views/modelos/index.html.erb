@@ -1,11 +1,20 @@
 <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
-  <p id="notice"><%= notice %></p>
   <h1>Modelos</h1>
 </div>
 
 <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+          <%= form_tag modelos_path, :action => 'index', :method => 'get' do %>
+            <%= 'Digite a marca para buscar' %>
+            <br>
+            <%= text_field_tag :search, params[:search], :class => "form-control" %>
+            <%= submit_tag "Buscar", :marca => nil, :class => "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12 text-right">
       <% if can? :create, Modelo %>
         <%= link_to 'Novo Modelo', new_modelo_path, class:"btn btn-default" %>
       <% end %>
@@ -26,16 +35,7 @@
           </thead>
 
           <tbody>
-            <%= form_tag modelos_path, :action => 'index', :method => 'get' do %>
-              <p>
-                <%= 'Digite a marca para buscar' %>
-                <br>
-                <%= text_field_tag :search, params[:search] %>
-                <%= submit_tag "Buscar", :marca => nil %>
-              </p>
-            <% end %>
-
-            <% @modelos.each do |modelo| %>
+           <% @modelos.each do |modelo| %>
               <tr>
                 <!-- <td><%= modelo.id %></td> -->
                 <td><%= modelo.marca %></td>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SisGEM - Sistema de Gestão de Equipamentos Móveis</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i" rel="stylesheet">
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body class="login">
+    <div class="container">
+        <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+            <div style="margin: -52px 0 -52px 0 !important;"">
+                <%= flash_messages %>
+            </div>
+        </div>
+        <%= yield %>
+    </div>
+    <footer>
+        <div class="text-center">
+            <h3>© 2018 COMTED | Desenvolvimento: IFF Campus Campos-Centro</h3>
+        </div>
+    </footer>
+</body>
+</html>

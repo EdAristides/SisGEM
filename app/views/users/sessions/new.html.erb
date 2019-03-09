@@ -1,31 +1,40 @@
 <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
-  <p id="notice"><%= notice %></p>
   <h1>Entrar</h1>
 </div>
 
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email, 'E-mail' %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+    <div id="login-form" class="col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+            <%= f.label :email, 'E-mail'%><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :password, 'Senha' %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+            <div class="text-center">
+                <%= f.submit "Acessar", class:"btn btn-primary" %>
+            </div>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, 'Lembrar-se' %>
+        </div>
+        <div class="form-group">
+            <% if devise_mapping.rememberable? -%>
+              <%= render "users/shared/links" %>
+            <% end -%>
+        </div>
+        <% end %>
     </div>
-
-    <div class="field">
-      <%= f.label :password, 'Senha' %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+    <div id="consulta" class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-4 col-md-offset-7 col-sm-5 col-sm-offset-7 col-xs-12">
+            <div class="form-group">
+                <label for="usr">SIAPE:</label>
+                <input type="text" class="form-control" id="usr">
+                <div class="text-center">
+                    <button type="button" class="btn btn-default">Consultar Andamento</button>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me, 'Lembrar-se' %>
-      </div>
-    <% end -%>
-
-    <div class="actions">
-      <%= f.submit "Acessar" %>
-    </div>
-  <% end %>
-
-  <%= render "users/shared/links" %>
+</div>
 </div>

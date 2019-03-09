@@ -31,10 +31,15 @@
   <div id="topbar">
         <div class="navbar navbar-fixed-top text-center">
             <div class="container-fluid">
-                <div class="col-md-2 col-sm-2 col-xs-12 user" style="z-index:1">
-                </div>
-                <div class="col-md-2 col-md-offset-3 col-sm-3 col-xs-12 logo">
+                <div class="col-md-4 col-md-offset-4 col-sm-3 col-xs-12 logo">
                     SisGEM
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <% if user_signed_in? %>
+                        Logado como: <strong><%= current_user.email %></strong>.
+                        <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+                        <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                    <% end %>
                 </div>
             </div>
         </div>
@@ -66,6 +71,9 @@
         </div>
     <% end %>
     <div id="conteudo">
+        <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+                <%= flash_messages %>
+        </div>
       <%= yield %>
     </div>
 
@@ -77,19 +85,11 @@
         });
 
         $(".datepicker").mask("00/00/0000");
-        $('.currency').mask('000.000.000.000.000,00', { reverse: true });
         $(".cpf").mask("000.000.000-00");
         $(".cnpj").mask("00.000.000/0000-00");
         $(".cep").mask("00000-000");
         $(".telefone").mask("(00) 0000-0000");
         $(".celular").mask("(00) 00000-0000");
     </script>
-
-    <p class="navbar-text pull-right">
-    <% if user_signed_in? %>
-        Logado como: <strong><%= current_user.email %></strong>.
-        <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% end %>
   </body>
 </html>

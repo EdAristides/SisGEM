@@ -18,6 +18,7 @@ module SisGEM
 
     # formata todas a datas do sistema para o padrão brasileiro
     Time::DATE_FORMATS[:default] = "%d/%m/%Y %H:%M"
-	Date::DATE_FORMATS[:default] = "%d/%m/%Y"
+  Date::DATE_FORMATS[:default] = "%d/%m/%Y"
+  config.i18n.default_locale = :'pt-BR'
   end
 end

@@ -15,8 +15,20 @@ body.login {
     background: -webkit-linear-gradient(top, #08091c 0%,#050646 17%,#040759 34%,#06136d 51%,#071b7b 68%,#092d85 85%,#092d85 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #08091c 0%,#050646 17%,#040759 34%,#06136d 51%,#071b7b 68%,#092d85 85%,#092d85 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08091c', endColorstr='#092d85',GradientType=0 ); /* IE6-9 */
-    padding: 150px 0px 25px;
+    /*padding: 150px 0px 25px;*/
     overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+    padding-top: 52px;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body.login h1{
+    color: #fff;
 }
 
 #login-form {
@@ -81,6 +93,15 @@ label {
     background-color: #4C5B68;
 }
 
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
 footer h3{
     color: #fff;
     margin-top: 16%;
@@ -130,7 +151,7 @@ footer h3{
 
 .affix {
     float: left;
-    width: 6% !important;
+    width: 6%;
     z-index: 4000 !important;
     background-color: #3A4349;
     padding: 0%;
@@ -141,7 +162,7 @@ footer h3{
 }
 
 #affix:hover {
-    width: 16% !important;
+    width: 16%;
 }
 
 .affix .glyphicon {
@@ -419,6 +440,11 @@ footer h3{
     margin-bottom: 2%;
 }
 
+#conteudo .alert{
+    position: inherit;
+    z-index: 1;
+}
+
     #conteudo ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: #B5BCCB;
         font-family: 'Ubuntu', sans-serif;
@@ -525,6 +551,8 @@ footer h3{
 }
 
 .conteudoInf .form-control {
+    display: inline-block;
+    width: initial;
 }
 
 #conteudo .conteudoSup .btn-success {
@@ -658,6 +686,15 @@ scrollbar {
 /**/
 
 @media(max-width:320px) {
+body.login{
+    padding: 0 !important;
+
+}
+
+#consulta{
+    margin-top: 15px;
+}
+
     #login-form {
         position: initial;
     }
@@ -668,31 +705,6 @@ scrollbar {
 
     #conteudo {
         margin-top: 42%;
-    }
-
-    /**/
-
-    .affix {
-        margin-top: 58%;
-        margin-left: -3.37%;
-        display: none;
-    }
-
-        .affix:hover {
-            width: 60% !important;
-        }
-
-    .intro {
-        display: block !important;
-        width: 60% !important;
-        overflow-y: auto;
-        height: 450px;
-    }
-
-    #resp {
-        margin: 51% 0% 0%;
-        z-index: 4000;
-        display: block;
     }
 
     /**/
@@ -715,8 +727,32 @@ scrollbar {
         width: initial;
         font-size: 11px;
     }
+   
     .affix img {
         display: none;
+    }
+
+    .affix {
+        margin-top: 35%;
+        margin-left: -3.37%;
+        display: none;
+    }
+
+        .affix:hover {
+            width: 60% !important;
+        }
+
+    .intro {
+        display: block !important;
+        width: 60% !important;
+        overflow-y: auto;
+        height: 450px;
+    }
+
+    #resp {
+        margin: 28% 0% 0%;
+        z-index: 4000;
+        display: block;
     }
 
     #conteudo {
@@ -737,8 +773,37 @@ scrollbar {
 
     /**/
 
+    .no_gutter_left {
+        padding: initial;
+        margin: initial;
+    }
+
+    .no_gutter_right {
+        padding: initial;
+        margin: initial;
+    }
+
+    #search{
+        width: 71% !important;
+    }
+}
+
+@media(min-width: 321px) and (max-width:767px) {
+    #consulta{
+        margin-top: 15px;
+    }
+
+    #login-form {
+        position: initial;
+    }
+
+
+    .affix img {
+        display: none;
+    }
+
     .affix {
-        margin-top: 50%;
+        margin-top: 33%;
         margin-left: -3.37%;
         display: none;
     }
@@ -755,37 +820,21 @@ scrollbar {
     }
 
     #resp {
-        margin: 45% 0% 0%;
+        margin: 28% 0% 0%;
         z-index: 4000;
         display: block;
     }
 
-    /**/
-
-    .no_gutter_left {
-        padding: initial;
-        margin: initial;
-    }
-
-    .no_gutter_right {
-        padding: initial;
-        margin: initial;
-    }
-}
-
-@media(min-width: 321px) and (max-width:767px) {
-    #login-form {
-        position: initial;
-    }
-
-    .affix {
-        width: 24% !important;
-        padding: 2% 0%;
-        margin-left: -1.80%;
+    #conteudo {
+        margin-top: 30%;
     }
 
     #conteudo {
         margin-top: 5%;
+    }
+
+    #conteudo .conteudoSup {
+        margin-top: 75px;
     }
 
         #conteudo .conteudoSup .btn-primary {
@@ -795,15 +844,78 @@ scrollbar {
         #conteudo .conteudoSup .btn-success {
             font-size: 13px;
         }
+        .conteudoInf .btn{
+            font-size: 15px;
+        }
 }
 
 @media(min-width: 768px) and (max-width:991px) {
     .affix {
         margin-left: -1.6%;
         padding: 1% 0%;
-        width: 19% !important;
+        width: 6% !important;
+        margin-top: 72px;
+    }
+
+    .affix:hover {
+        width: 22% !important;
+    }
+
+    .intro{
+        width: 22% !important;
+    }
+
+    #resp {
+        margin: 7% 0% 15%;
+        cursor: pointer;
+        position: fixed;
+        display: inline-block;
+    }
+
+    body.login{
+        padding-top: 25px;
+    }
+
+    .conteudoInf .form-control {
+        width: 100%;
     }
 }
 
 @media(min-width: 992px) and (max-width: 1200px) {
+    body.login{
+        padding: 15px !important;
+    }
+    body{
+        font-size: 12px;
+    }
+
+    .affix{
+        margin-top: 75px;
+    }
+
+    .affix:hover{
+        width: 18.5% !important;
+    }
+
+    .affix h3:hover{
+        font-size: 12px !important;
+        font-weight: 600;
+    }
+
+    .affix h3:hover{
+        font-size: 12px !important;
+        font-weight: 600;
+    }
+
+    .intro h3{
+        font-size: 12px !important;
+        font-weight: 600;
+    }
+
+    #resp {
+        margin: 5.5% 0% 0%;
+        cursor: pointer;
+        position: fixed;
+        display: inline-block;
+    }
 }

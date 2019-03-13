@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2019_01_09_175344) do
     t.bigint "equipamento_id"
     t.bigint "servidor_id"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "updated_at", null: true
     t.index ["equipamento_id"], name: "index_termo_compromissos_on_equipamento_id"
     t.index ["servidor_id"], name: "index_termo_compromissos_on_servidor_id"
   end

@@ -1,56 +1,64 @@
-<div class="row">
-  <%= form_with(model: modelo, local: true) do |form| %>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
+  <div class="row">
+    <%= form_with(model: modelo, local: true) do |form| %>
     <% if modelo.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(modelo.errors.count, "error") %> prohibited this modelo from being saved:</h2>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(modelo.errors.count, "error") %> impossibilitando esse modelo de ser salvo:</h2>
 
-        <ul>
+      <ul>
         <% modelo.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <li>
+          <%= message %>
+        </li>
         <% end %>
-        </ul>
-      </div>
+      </ul>
+    </div>
     <% end %>
 
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="col-md-4 col-sm-4 col-xs-12 text-left">
-        <div class="form-group">
-          <%= form.label :tipo, 'Tipo do Equipamento' %><br />
-          <label class="radio-inline"><%= form.radio_button :tipo, 'Notebook', :checked => true %>Notebook</label>
-          <label class="radio-inline"><%= form.radio_button :tipo, 'Tablet' %>Tablet</label>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+          <div class="form-group">
+            <%= form.label :tipo, 'Tipo do Equipamento' %><br />
+            <label class="radio-inline">
+              <%= form.radio_button :tipo, 'Notebook', :checked => true %>Notebook</label>
+            <label class="radio-inline">
+              <%= form.radio_button :tipo, 'Tablet' %>Tablet</label>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
-    <div class="form-group">
-      <%= form.label :marca %>
-      <%= form.text_field :marca, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
-    <div class="form-group">
-      <%= form.label :valor %>
-      <%= form.text_field :valor, class: "currency form-control" %>
-    </div>
-  </div>
-
-  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
-    <div class="form-group">
-      <%= form.label :configuracao %>
-      <%= form.text_area :configuracao, rows: "2", class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <%= form.submit 'Salvar', class:"btn btn-default" %>
-        <%= link_to 'Voltar', modelos_path, class:"btn btn-default" %>
+    <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+      <div class="form-group">
+        <%= form.label :marca %><br />
+        <%= form.text_field :marca, class: "form-control" %>
       </div>
     </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+      <div class="form-group">
+        <%= form.label :valor %><br />
+        <%= form.text_field :valor, class: "currency form-control" %>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+      <div class="form-group">
+        <%= form.label :configuracao %><br />
+        <%= form.text_area :configuracao, rows: "2", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <%= form.submit 'Salvar', class:"btn btn-default" %>
+          <%= link_to 'Voltar', modelos_path, class:"btn btn-default" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
-<% end %>
+</div>

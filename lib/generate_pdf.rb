@@ -74,7 +74,7 @@ module GeneratePdf
       # Inclui em baixo da folha do lado direito a data e o némero da página usando a tag page
       # pdf.number_pages "Gerado: #{(Time.now).strftime("%d/%m/%y as %H:%M")} - Página ", :start_count_at => 0, :page_filter => :all, :at => [pdf.bounds.right - 140, 7], :align => :right, :size => 8
 
-      pdf.number_pages "<page> de <total>", :start_count_at => 1, :page_filter => lambda{ |pg| pg != 0 }, :at => [pdf.bounds.right - 50, 0], :align => :right, :size => 12
+      pdf.number_pages "<page> de <total>", :start_count_at => 1, :page_filter => lambda{ |pg| pg != 0 }, :at => [pdf.bounds.right - 50, 0], :align => :right, :size => 10
       # Gera no nosso PDF e coloca na pasta public com o nome termo_compromisso.pdf
       pdf.render_file('public/termo_compromisso.pdf')
     end

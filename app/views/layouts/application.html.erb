@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +8,7 @@
     <title>SisGEM - Sistema de Gestão de Equipamentos Móveis</title>
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i" rel="stylesheet">
-
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,92 +19,54 @@
         function open() {
             if ($("#affix").hasClass("intro")) {
                 $("#affix").removeClass("intro");
-            } else {
+            }
+            else {
                 $("#affix").addClass("intro");
             }
         }
     </script>
-</head>
+  </head>
 
-<body>
-    <div id="topbar">
+  <body>
+  <div id="topbar">
         <div class="navbar navbar-fixed-top text-center">
             <div class="container-fluid">
-                <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-2 col-xs-12 logo">
-                    SisGEM
+                <div class="col-md-2 col-sm-2 col-xs-12 user" style="z-index:1">
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <% if user_signed_in? %>
-                    Logado como: <strong>
-                        <%= current_user.email %></strong>.
-                    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-                    <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                    <% end %>
+                <div class="col-md-2 col-md-offset-3 col-sm-3 col-xs-12 logo">
+                    SisGEM
                 </div>
             </div>
         </div>
     </div>
     <% if user_signed_in? %>
-    <div class="container-fluid">
-        <span id="resp" class="glyphicon glyphicon-menu-hamburger" onclick="open()"></span>
-        <div class="row mainrow">
-            <div class="col-md-2 col-sm-2 col-xs-4">
-                <div id="affix" class="affix col-md-12 col-sm-12 col-xs-12">
-                    <ul class="nav nav-stacked text-left">
-                        <li><a href="/">
-                                <div class="icon index"></div>
-                                <h3> &nbsp;Index</h3>
-                            </a></li>
-                        <li><a href="/modelos">
-                                <div class="icon modelos"></div>
-                                <h3> &nbsp;Modelos</h3>
-                            </a></li>
-                        <li><a href="/equipamentos">
-                                <div class="icon equipamentos"></div>
-                                <h3> &nbsp;Equipamentos</h3>
-                            </a></li>
-                        <li><a href="/pecas">
-                                <div class="icon pecas"></div>
-                                <h3> &nbsp;Peças</h3>
-                            </a></li>
-                        <li><a href="/estoque_pecas">
-                                <div class="icon estoque_pecas"></div>
-                                <h3> &nbsp;Estoque</h3>
-                            </a></li>
-                        <li><a href="/manutencaos">
-                                <div class="icon manutencao"></div>
-                                <h3> &nbsp;Manutenção</h3>
-                            </a></li>
-                        <li><a href="/servidors">
-                                <div class="icon servidores"></div>
-                                <h3> &nbsp;Servidores</h3>
-                            </a></li>
-                        <li><a href="/termo_compromissos">
-                                <div class="icon termos"></div>
-                                <h3> &nbsp;Termos</h3>
-                            </a></li>
-                        <li><a href="/ocorrencia">
-                                <div class="icon ocorrencias"></div>
-                                <h3> &nbsp;Ocorrências</h3>
-                            </a></li>
-                        <% if current_user.funcao == "Coordenador" %>
-                        <li><a href="/users">
-                                <div class="icon users"></div>
-                                <h3> &nbsp;Usuários</h3>
-                            </a></li>
-                        <% end %>
-                        <!-- <li><a href="/users"><div class="icon users"></div><h3> &nbsp;Usuários</h3></a></li> -->
-                    </ul>
+        <div class="container-fluid">
+            <span id="resp" class="glyphicon glyphicon-menu-hamburger" onclick="myFunction()"></span>
+            <div class="row mainrow">
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div id="affix" class="affix col-md-12 col-sm-12 col-xs-12">
+                        <ul class="nav nav-stacked text-left">
+                            <li><a href="/"><div class="icon index"></div><h3> &nbsp;Index</h3></a></li>
+                            <li><a href="/modelos"><div class="icon modelos"></div><h3> &nbsp;Modelos</h3></a></li>
+                            <li><a href="/equipamentos"><div class="icon equipamentos"></div><h3> &nbsp;Equipamentos</h3></a></li>
+                            <li><a href="/pecas"><div class="icon pecas"></div><h3> &nbsp;Peças</h3></a></li>
+                            <li><a href="/estoque_pecas"><div class="icon estoque_pecas"></div><h3> &nbsp;Peças Disponíveis</h3></a></li>
+                            <li><a href="/manutencaos"><div class="icon manutencao"></div><h3> &nbsp;Manutenção</h3></a></li>
+                            <li><a href="/servidors"><div class="icon servidores"></div><h3> &nbsp;Servidores</h3></a></li>
+                            <li><a href="/termo_compromissos"><div class="icon termos"></div><h3> &nbsp;Termos de Compromisso</h3></a></li>
+                            <li><a href="/ocorrencia"><div class="icon ocorrencias"></div><h3> &nbsp;Ocorrências</h3></a></li>
+                            <% if current_user.funcao == "Coordenador" %>
+                                <li><a href="/users"><div class="icon users"></div><h3> &nbsp;Usuários</h3></a></li>
+                            <% end %>
+                            <!-- <li><a href="/users"><div class="icon users"></div><h3> &nbsp;Usuários</h3></a></li> -->
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <% end %>
     <div id="conteudo">
-        <div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
-            <%= flash_messages %>
-        </div>
-        <%= yield %>
+      <%= yield %>
     </div>
 
     <script>
@@ -116,12 +77,19 @@
         });
 
         $(".datepicker").mask("00/00/0000");
+        $('.currency').mask('000.000.000.000.000,00', { reverse: true });
         $(".cpf").mask("000.000.000-00");
         $(".cnpj").mask("00.000.000/0000-00");
         $(".cep").mask("00000-000");
         $(".telefone").mask("(00) 0000-0000");
         $(".celular").mask("(00) 00000-0000");
     </script>
-</body>
 
+    <p class="navbar-text pull-right">
+    <% if user_signed_in? %>
+        Logado como: <strong><%= current_user.email %></strong>.
+        <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% end %>
+  </body>
 </html>

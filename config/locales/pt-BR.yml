@@ -1,5 +1,13 @@
 pt-BR:
   # formatos de data e hora
+  views:
+    pagination:
+      first: "&laquo; Primeiro"
+      last: "Último &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Pŕoximo &rsaquo;"
+      truncate: "&hellip;"
+
   date:
     formats:
       default: "%d/%m/%Y"

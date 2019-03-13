@@ -1,0 +1,2 @@
+id,num_termo,data_vinculo,data_devolucao,status(em uso, devolvido),id_equipamento,id_servidor,created_at,update_at
+1,005/16,03-08-2016,,Em uso,5,260,2019-01-01,2019-01-01

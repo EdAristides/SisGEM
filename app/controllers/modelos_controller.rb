@@ -32,7 +32,7 @@ class ModelosController < ApplicationController
 
     respond_to do |format|
       if @modelo.save
-        format.html { redirect_to @modelo, notice: 'Modelo foi criado com sucesso.' }
+        format.html { redirect_to @modelo, notice: 'Modelo was successfully created.' }
         format.json { render :show, status: :created, location: @modelo }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class ModelosController < ApplicationController
   def update
     respond_to do |format|
       if @modelo.update(modelo_params)
-        format.html { redirect_to @modelo, notice: 'Modelo foi editado com sucesso.' }
+        format.html { redirect_to @modelo, notice: 'Modelo was successfully updated.' }
         format.json { render :show, status: :ok, location: @modelo }
       else
         format.html { render :edit }
@@ -62,14 +62,14 @@ class ModelosController < ApplicationController
       @modelo.destroy
       # flash[:success] = "successfully destroyed."
       respond_to do |format|
-        format.html { redirect_to modelos_url, notice: 'Modelo foi excluído com sucesso.' }
+        format.html { redirect_to modelos_url, notice: 'Modelo was successfully destroyed.' }
         format.json { head :no_content }
       end
     rescue ActiveRecord::DeleteRestrictionError => e
       @modelo.errors.add(:base, e)
       # flash[:error] = "#{e}"
       respond_to do |format|
-        format.html { redirect_to modelos_url, notice: 'Modelo não pode ser destruído. Há alguma dependencia.' }
+        format.html { redirect_to modelos_url, notice: 'Modelo can not be destroyed. There is some dependency.' }
         format.json { head :no_content }
       end
     end 

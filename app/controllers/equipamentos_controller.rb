@@ -67,14 +67,14 @@ class EquipamentosController < ApplicationController
       @equipamento.destroy
       # flash[:success] = "successfully destroyed."
       respond_to do |format|
-        format.html { redirect_to equipamentos_url, notice: 'Equipamento foi excluído com sucesso' }
+        format.html { redirect_to equipamentos_url, notice: 'Equipamento was successfully destroyed.' }
         format.json { head :no_content }
       end
     rescue ActiveRecord::DeleteRestrictionError => e
       @equipamento.errors.add(:base, e)
       # flash[:error] = "#{e}"
       respond_to do |format|
-        format.html { redirect_to equipamentos_url, notice: 'Equipamnto não pode ser destruído. Há alguma dependência.' }
+        format.html { redirect_to equipamentos_url, notice: 'Equipamento can not be destroyed. There is some dependency.' }
         format.json { head :no_content }
       end
     end 

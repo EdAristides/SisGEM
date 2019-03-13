@@ -1,4 +1,3 @@
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
 <%= form_with(model: equipamento, local: true) do |form| %>
   <% if equipamento.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="col-md-4 col-sm-6 col-xs-12 text-left">
-          <div class="form-group" >
-            <%= form.label :tipo, 'Tipo do Equipamento' %><br />
-            <label class="radio-inline" onclick="notebook()"><%= form.radio_button :tipo, 'Notebook', id:'note', :checked => true %>Notebook</label>
-            <label class="radio-inline" onclick="tablet()"><%= form.radio_button :tipo, 'Tablet', id:'tablet'%>Tablet</label>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div id="noteSelect" class="col-md-4 col-sm-4 col-xs-12 text-left">
-      <div class="form-group">
-        <%= form.label :modelo_id, 'Modelo' %>
-        <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Notebook'), :id, :marca, {:class=>'form-control'} %>
-      </div>
-    </div>
-  
-    <div id="tabletSelect" class="hidden-lg hidden-md hidden-sm hidden-xs text-left">
-      <div class="form-group">
-        <%= form.label :modelo_id, 'Modelo' %>
-        <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Tablet'), :id, :marca, :class => "form-control" %>
-      </div>
-    </div>
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
@@ -78,7 +51,31 @@
     </div>
   </div> -->
 
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+        <div class="form-group" >
+          <%= form.label :tipo, 'Tipo do Equipamento' %><br />
+          <label class="radio-inline" onclick="notebook()"><%= form.radio_button :tipo, 'Notebook', id:'note', :checked => true %>Notebook</label>
+          <label class="radio-inline" onclick="tablet()"><%= form.radio_button :tipo, 'Tablet', id:'tablet'%>Tablet</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="noteSelect" class="col-md-4 col-sm-4 col-xs-12 text-left">
+    <div class="form-group">
+      <%= form.label :modelo_id, 'Modelo' %>
+      <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Notebook'), :id, :marca %>
+    </div>
+  </div>
 
+  <div id="tabletSelect" class="hidden-lg hidden-md hidden-sm hidden-xs text-left">
+    <div class="form-group">
+      <%= form.label :modelo_id, 'Modelo' %>
+      <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Tablet'), :id, :marca %>
+    </div>
+  </div>
 
   <div class="col-md-6 col-sm-6 col-xs-12 text-left">
     <div class="form-group">
@@ -96,7 +93,6 @@
     </div>
   </div>
 <% end %>
-</div>
 
 <script>
   $( document ).ready(function() {

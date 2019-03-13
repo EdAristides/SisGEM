@@ -1,22 +1,25 @@
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1">
   <h1>Modelos</h1>
 </div>
 
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
   <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group">
-          <%= form_tag modelos_path, :action => 'index', :method => 'get' do %>
-            <%= 'Digite a marca para buscar' %>
-            <br>
-            <%= text_field_tag :search, params[:search], :class => "form-control" %>
-            <%= submit_tag "Buscar", :marca => nil, :class => "btn btn-primary" %>
+    <div class="col-md-6 col-sm-8 col-xs-12">
+      <div class="form-group">
+        <%= form_tag modelos_path, :action => 'index', :method => 'get' do %>
+        <%= 'Digite a marca para buscar' %>
+        <br>
+        <%= text_field_tag :search, params[:search], :class => "form-control", :style => "width: initial;"%>
+        <%= submit_tag "Buscar", :marca => nil, :class => "btn btn-primary" %>
         <% end %>
       </div>
     </div>
-    <div class="col-md-6 col-sm-6 col-xs-12 text-right">
+    <div class="col-md-6 col-sm-4 col-xs-12 text-right">
       <% if can? :create, Modelo %>
+      <div class="form-group">
+        <br>
         <%= link_to 'Novo Modelo', new_modelo_path, class:"btn btn-default" %>
+      </div>
       <% end %>
     </div>
   </div>
@@ -35,16 +38,28 @@
           </thead>
 
           <tbody>
-           <% @modelos.each do |modelo| %>
-              <tr>
-                <!-- <td><%= modelo.id %></td> -->
-                <td><%= modelo.marca %></td>
-                <td><%= modelo.valor %></td>
-                <td><%= modelo.tipo %></td>
-                <td><%= link_to 'Detalhes', modelo, class: "btn-sm btn-info" %></td>
-                <td><%= link_to 'Editar', edit_modelo_path(modelo), class: "btn-sm btn-default" %></td>
-                <td><%= link_to 'Excluir', modelo, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
-              </tr>
+            <% @modelos.each do |modelo| %>
+            <tr>
+              <!-- <td><%= modelo.id %></td> -->
+              <td>
+                <%= modelo.marca %>
+              </td>
+              <td>
+                <%= modelo.valor %>
+              </td>
+              <td>
+                <%= modelo.tipo %>
+              </td>
+              <td>
+                <%= link_to 'Detalhes', modelo, class: "btn-sm btn-info" %>
+              </td>
+              <td>
+                <%= link_to 'Editar', edit_modelo_path(modelo), class: "btn-sm btn-default" %>
+              </td>
+              <td>
+                <%= link_to 'Excluir', modelo, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %>
+              </td>
+            </tr>
             <% end %>
           </tbody>
         </table>

@@ -1,16 +1,13 @@
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
-  <p id="notice"><%= notice %></p>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1">
   <h1>Ocorrências</h1>
 </div>
 
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
+  <div class="col-md-8 col-md-offset-4 col-sm-10 col-sm-offset-2 col-xs-12 text-right">
       <% if can? :create, Ocorrencium %>
-        <%= link_to 'Registrar Ocorrências', new_ocorrencium_path, class:"btn btn-default" %>
+        <%= link_to 'Registrar Ocorrências', new_ocorrencium_path, class:"btn btn-primary" %>
       <% end %>
     </div>
-  </div>
 
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">

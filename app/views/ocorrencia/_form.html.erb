@@ -1,3 +1,4 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
 <%= form_with(model: ocorrencium, local: true) do |form| %>
   <% if ocorrencium.errors.any? %>
     <div id="error_explanation">
@@ -13,26 +14,31 @@
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :termo_compromisso_id, 'Termo de Compromisso' %>
-      <%= form.collection_select :termo_compromisso_id, TermoCompromisso.all, :id, :numTermo %>
+      <%= form.label :termo_compromisso_id, 'Termo de Compromisso' %><br>
+      <%= form.collection_select :termo_compromisso_id, TermoCompromisso.all, :id, :numTermo, {}, {class: 'form-control'} %>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :tipo, 'Tipo' %>
-      <%= form.select :tipo, ['Desaparecido', 'Furtado'] %>
+      <%= form.label :tipo, 'Tipo' %><br>
+      <%= form.select :tipo, ['Desaparecido', 'Furtado'], {}, {class: 'form-control'} %>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :dataOcorrencia, 'Data da Ocorrência' %>
+      <%= form.label :dataOcorrencia, 'Data da Ocorrência' %><br>
       <%= form.date_select :dataOcorrencia %>
     </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit 'Salvar', class:"btn btn-default" %>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= form.submit 'Salvar', class:"btn btn-default" %>
+      </div>
+    </div>
   </div>
 <% end %>
+</div>

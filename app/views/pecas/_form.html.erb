@@ -1,3 +1,5 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
+  <div class="row">
 <%= form_with(model: peca, local: true) do |form| %>
   <% if peca.errors.any? %>
     <div id="error_explanation">
@@ -14,6 +16,7 @@
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :nome %>
+      <br>
       <%= form.text_field :nome, class: "form-control" %>
     </div>
   </div>
@@ -28,9 +31,10 @@
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <%= form.submit 'Salvar', class:"btn btn-default" %>
+        <%= form.submit 'Salvar', class:"btn btn-primary" %>
         <%= link_to 'Voltar', pecas_path, class:"btn btn-default" %>
       </div>
     </div>
   </div>
 <% end %>
+  </div>

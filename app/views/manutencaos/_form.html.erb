@@ -18,28 +18,28 @@
 
     <div class="col-md-4 col-sm-4 col-xs-12 text-left">
       <div class="form-group">
-        <%= form.label :equipamento_id, 'Patrimônio' %>
-        <%= form.collection_select :equipamento_id, Equipamento.all, :id, :patrimonio %>
+        <%= form.label :equipamento_id, 'Patrimônio' %><br>
+        <%= form.collection_select :equipamento_id, Equipamento.all, :id, :patrimonio, {}, {class: 'form-control'} %>
       </div>
     </div>
 
     <div class="col-md-4 col-sm-4 col-xs-12 text-left">
       <div class="form-group">
-        <%= form.label :numOrdem, 'Número de Ordem' %>
+        <%= form.label :numOrdem, 'Número de Ordem' %><br>
         <%= form.text_field :numOrdem, class: "form-control" %>
       </div>
     </div>
 
     <div class="col-md-4 col-sm-4 col-xs-12 text-left">
       <div class="form-group">
-        <%= form.label :descricao, 'Descrição' %>
+        <%= form.label :descricao, 'Descrição' %><br>
         <%= form.text_field :descricao, class: "form-control" %>
       </div>
     </div>
 
     <div class="col-md-4 col-sm-4 col-xs-12 text-left">
       <div class="form-group">
-        <%= form.label :dataEntrada, 'Data de Entrada' %>
+        <%= form.label :dataEntrada, 'Data de Entrada' %><br>
         <%= form.date_select :dataEntrada, class: "form-control" %>
       </div>
     </div>
@@ -53,15 +53,15 @@
 
     <div class="col-md-4 col-sm-4 col-xs-12 text-left">
       <div class="form-group">
-        <%= form.label :status, 'Status' %>
-        <%= form.select :status, ['Aguardando técnico', 'Em manutenção', 'Concluído'] %>
+        <%= form.label :status, 'Status' %><br>
+        <%= form.select :status, ['Aguardando técnico', 'Em manutenção', 'Concluído'], {}, {class: 'form-control'} %>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <%= form.submit 'Salvar', class:"btn btn-default" %>
+          <%= form.submit 'Salvar', class:"btn btn-primary" %>
           <%= link_to 'Voltar', manutencaos_path, class:"btn btn-default" %>
         </div>
       </div>

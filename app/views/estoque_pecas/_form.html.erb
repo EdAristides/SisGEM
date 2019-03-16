@@ -1,3 +1,4 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
 <%= form_with(model: estoque_peca, local: true) do |form| %>
   <% if estoque_peca.errors.any? %>
     <div id="error_explanation">
@@ -11,31 +12,31 @@
     </div>
   <% end %>
 
-  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+  <div class="col-md-6 col-sm-6 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :equipamento_id, 'Patrimônio' %>
-      <%= form.collection_select :equipamento_id, Equipamento.where(status: 'Doador de Peças'), :id, :patrimonio, :prompt => "Escolha um patrimônio..." %>
+      <%= form.label :equipamento_id, 'Patrimônio' %><br>
+      <%= form.collection_select :equipamento_id, Equipamento.where(status: 'Doador de Peças'), :id, :patrimonio, {}, {class: 'form-control'} %>
     </div>
   </div>
 
-  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+  <div class="col-md-6 col-sm-6 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :peca_id, 'Peca' %>
-      <%= form.collection_select :peca_id, Peca.all, :id, :nome, :prompt => "Escolha uma peça..." %>
+      <%= form.label :peca_id, 'Peca' %><br>
+      <%= form.collection_select :peca_id, Peca.all, :id, :nome, {}, {class: 'form-control'} %>
     </div>
   </div>
 
-  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+  <div class="col-md-6 col-sm-6 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :status, 'Status' %>
-      <%= form.select :status, ['Disponível', 'Utilizada'] %>
+      <%= form.label :status, 'Status' %><br>
+      <%= form.select :status, ['Disponível', 'Utilizada'], {}, {class: 'form-control'} %>
     </div>
   </div>
 
-  <div class="col-md-4 col-sm-4 col-xs-12 text-left">
+  <div class="col-md-6 col-sm-6 col-xs-12 text-left">
     <div class="form-group">
-      <%= form.label :quantidade, 'Quantidade' %>
-      <%= form.select :quantidade, ['1', '2', '3', '4', '5', '6', '7', '8', '9'] %>
+      <%= form.label :quantidade, 'Quantidade' %><br>
+      <%= form.select :quantidade, ['1', '2', '3', '4', '5', '6', '7', '8', '9'], {}, {class: 'form-control'} %>
     </div>
   </div>
 
@@ -55,3 +56,4 @@
     </div>
   </div>
 <% end %>
+</div>

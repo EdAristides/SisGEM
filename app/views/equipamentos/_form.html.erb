@@ -2,8 +2,6 @@
 <%= form_with(model: equipamento, local: true) do |form| %>
   <% if equipamento.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(equipamento.errors.count, "error") %> prohibited this equipamento from being saved:</h2>
-
       <ul>
       <% equipamento.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -27,14 +25,14 @@
     <div id="noteSelect" class="col-md-4 col-sm-4 col-xs-12 text-left">
       <div class="form-group">
         <%= form.label :modelo_id, 'Modelo' %>
-        <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Notebook'), :id, :marca, {:class=>'form-control'} %>
+        <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Notebook'), :id, :marca, {}, {class: 'form-control'} %>
       </div>
     </div>
   
     <div id="tabletSelect" class="hidden-lg hidden-md hidden-sm hidden-xs text-left">
       <div class="form-group">
         <%= form.label :modelo_id, 'Modelo' %>
-        <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Tablet'), :id, :marca, :class => "form-control" %>
+        <%= form.collection_select :modelo_id, Modelo.where(tipo: 'Tablet'), :id, :marca, {}, {class: 'form-control'} %>
       </div>
     </div>
 
@@ -55,7 +53,7 @@
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :status, 'Status' %>
-      <%= form.select :status, ['Disponível', 'Vinculado', 'Transferido', 'Desaparecido', 'Furtado', 'Inutilizável', 'Doador de Peças', 'Em Manutenção'] %>
+      <%= form.select :status, ['Disponível', 'Vinculado', 'Transferido', 'Desaparecido', 'Furtado', 'Inutilizável', 'Doador de Peças', 'Em Manutenção'], {}, {class: 'form-control'} %>
     </div>
   </div>
 
@@ -90,7 +88,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <%= form.submit 'Salvar', class:"btn btn-default" %>
+        <%= form.submit 'Salvar', class:"btn btn-primary" %>
         <%= link_to 'Voltar', "javascript:window.history.go(-1)", class:"btn btn-default" %>
       </div>
     </div>

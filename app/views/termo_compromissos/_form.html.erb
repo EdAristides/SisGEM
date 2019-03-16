@@ -1,3 +1,5 @@
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
+  <div class="row">
 <%= form_with(model: termo_compromisso, local: true) do |form| %>
   <% if termo_compromisso.errors.any? %>
     <div id="error_explanation">
@@ -33,21 +35,21 @@
   <div id="noteSelect" class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :equipamento_id, 'Patrimônio' %>
-      <%= form.collection_select :equipamento_id, Equipamento.notebook_disponivel, :id, :patrimonio, :prompt => "Escolha um patrimônio..." %>
+      <%= form.collection_select :equipamento_id, Equipamento.notebook_disponivel, :id, :patrimonio, {}, {class: 'form-control'} %>
     </div>
   </div>
 
   <div id="tabletSelect" class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :equipamento_id, 'Patrimônio' %>
-      <%= form.collection_select :equipamento_id, Equipamento.tablet_disponivel, :id, :patrimonio, :prompt => "Escolha um patrimônio..." %>
+      <%= form.collection_select :equipamento_id, Equipamento.tablet_disponivel, :id, :patrimonio, {}, {class: 'form-control'} %>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-4 col-xs-12 text-left">
     <div class="form-group">
       <%= form.label :servidor_id, 'Siape do Servidor' %>
-      <%= form.collection_select :servidor_id, Servidor.where(status: 'Ativo'), :id, :nome_e_siape, :prompt => "Escolha um servidor..." %>
+      <%= form.collection_select :servidor_id, Servidor.where(status: 'Ativo'), :id, :nome_e_siape, {}, {class: 'form-control'} %>
     </div>
   </div>
 
@@ -68,12 +70,13 @@
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <%= form.submit 'Salvar', class:"btn btn-default" %>
+        <%= form.submit 'Salvar', class:"btn btn-primary" %>
         <%= link_to 'Voltar', "javascript:window.history.go(-1)", class:"btn btn-default" %>
       </div>
     </div>
   </div>
 <% end %> 
+  </div>
 
 <script>
   $( document ).ready(function() {

@@ -10,11 +10,16 @@ a:link {
 
 body.login {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#08091c+0,050646+17,040759+34,06136d+51,071b7b+68,092d85+85,092d85+100 */
-    background: #08091c; /* Old browsers */
-    background: -moz-linear-gradient(top, #08091c 0%, #050646 17%, #040759 34%, #06136d 51%, #071b7b 68%, #092d85 85%, #092d85 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #08091c 0%,#050646 17%,#040759 34%,#06136d 51%,#071b7b 68%,#092d85 85%,#092d85 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #08091c 0%,#050646 17%,#040759 34%,#06136d 51%,#071b7b 68%,#092d85 85%,#092d85 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08091c', endColorstr='#092d85',GradientType=0 ); /* IE6-9 */
+    background: #08091c;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #08091c 0%, #050646 17%, #040759 34%, #06136d 51%, #071b7b 68%, #092d85 85%, #092d85 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #08091c 0%, #050646 17%, #040759 34%, #06136d 51%, #071b7b 68%, #092d85 85%, #092d85 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #08091c 0%, #050646 17%, #040759 34%, #06136d 51%, #071b7b 68%, #092d85 85%, #092d85 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#08091c', endColorstr='#092d85', GradientType=0);
+    /* IE6-9 */
     /*padding: 150px 0px 25px;*/
     overflow-y: hidden;
     height: 100%;
@@ -22,12 +27,13 @@ body.login {
     padding-top: 52px;
 }
 
-body, html {
-  height: 100%;
-  width: 100%;
+body,
+html {
+    height: 100%;
+    width: 100%;
 }
 
-body.login h1{
+body.login h1 {
     color: #fff;
 }
 
@@ -40,13 +46,13 @@ body.login h1{
     z-index: 1;
 }
 
-    #login-form a {
-        color: #050646;
-    }
+#login-form a {
+    color: #050646;
+}
 
-        #login-form a:hover {
-            color: #4C5B68;
-        }
+#login-form a:hover {
+    color: #4C5B68;
+}
 
 #consulta {
     border-radius: 5px;
@@ -93,7 +99,7 @@ label {
     background-color: #4C5B68;
 }
 
-footer{
+footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -102,7 +108,7 @@ footer{
     text-align: center;
 }
 
-footer h3{
+footer h3 {
     color: #fff;
     margin-top: 16%;
     font-size: 14px;
@@ -123,7 +129,7 @@ footer h3{
 #topbar .navbar {
     padding: 1.5% 0%;
     background-color: #fff;
-    box-shadow: 0px 4px 23px 0 rgba(199,201,210,0.5);
+    box-shadow: 0px 4px 23px 0 rgba(199, 201, 210, 0.5);
 }
 
 #topbar .logo img {
@@ -188,9 +194,8 @@ footer h3{
 
 .affix .icon {
     width: 27px;
-    margin: 0px 3px -10px -3px;
+    margin: 1px 3px -10px 0px;
     height: 52px;
-    margin-left: -1.5% !important;
 }
 
 .affix:hover .icon {
@@ -212,60 +217,24 @@ footer h3{
     margin-top: 8px !important;
 }
 
-.affix .open {
-    background: url(../img/open.png) center center no-repeat;
+/*.affix .manutencao {
+    background: url('manutencao.png') center center no-repeat;
 }
 
-.affix .negocio {
-    background: url(../img/negocio.png) center center no-repeat;
-}
-
-.affix .tag {
-    background: url(../img/tag.png) center center no-repeat;
-}
-
-.affix .tema {
-    background: url('../img/tema.png') center center no-repeat;
-}
-
-.affix .plano {
-    background: url('../img/plano.png') center center no-repeat;
-}
-
-.affix .seguimento {
-    background: url('../img/seguimento.png') center center no-repeat;
-}
-
-.affix .template {
-    background: url('../img/template.png') center center no-repeat;
-}
-
-.affix .social {
-    background: url(../img/social.png) center center no-repeat;
-}
-
-.affix .editor {
-    background: url('../img/editores.png') center center no-repeat;
-}
-
-.affix .relatorio {
-    background: url('../img/relatorios.png') center center no-repeat;
-}
-
-.affix .perfil {
-    background: url('../img/perfis.png') center center no-repeat;
-}
+.affix .users {
+    background: url('perfis.png') center center no-repeat;
+}*/
 
 .affix img {
     width: initial;
 }
 
-.affix .nav > li > a {
+.affix .nav>li>a {
     padding: 0px 0px 0px 25px !important;
     margin: 0;
 }
 
-.affix .nav > li > a {
+.affix .nav>li>a {
     position: initial;
     display: block;
     padding: 8px 15px;
@@ -278,7 +247,7 @@ footer h3{
         color: #fff !important;
     }*/
 
-.intro .nav > li > a {
+.intro .nav>li>a {
     position: initial;
     display: block;
     padding: 8px 15px;
@@ -295,58 +264,58 @@ footer h3{
     margin-top: 63px;
 }
 
-    .affix h3 {
-        display: none;
-    }
+.affix h3 {
+    display: none;
+}
 
-    .affix span {
-        font-family: 'Ubuntu', sans-serif;
-        display: none;
-        width: 20%;
-    }
+.affix span {
+    font-family: 'Ubuntu', sans-serif;
+    display: none;
+    width: 20%;
+}
 
-    .affix:hover h3 {
-        display: inline-block !important;
-        color: #CDD3E1;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.22px;
-        line-height: 18px;
-        width: 55%;
-    }
+.affix:hover h3 {
+    display: inline-block !important;
+    color: #CDD3E1;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22px;
+    line-height: 18px;
+    width: 55%;
+}
 
-    .affix:hover span {
-        display: initial;
-        color: #FFFFFF;
-        font-size: 13px;
-        font-weight: bold;
-        letter-spacing: 0.22px;
-        line-height: 18px;
-        background-color: #1E76F4;
-        border-radius: 14px;
-        padding: 1px 10px;
-        margin-left: 15px;
-    }
+.affix:hover span {
+    display: initial;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.22px;
+    line-height: 18px;
+    background-color: #1E76F4;
+    border-radius: 14px;
+    padding: 1px 10px;
+    margin-left: 15px;
+}
 
 .intro {
     width: 16.5% !important;
 }
 
-    .intro h3 {
-        font-size: 12px !important;
-        display: inline-block !important;
-        color: #CDD3E1;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.22px;
-        line-height: 18px;
-    }
+.intro h3 {
+    font-size: 12px !important;
+    display: inline-block !important;
+    color: #CDD3E1;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22px;
+    line-height: 18px;
+}
 
-    .intro .icon {
-        height: 35px !important;
-    }
+.intro .icon {
+    height: 35px !important;
+}
 
 #resp {
     margin: 0% 0% 0%;
@@ -355,34 +324,35 @@ footer h3{
     display: none;
 }
 
-.nav-stacked li + li {
+.nav-stacked li+li {
     /*border-top: solid 1px #6f0f37;*/
-    box-shadow: inset 0px 1px 0px rgba(255,255,255,0.1);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
 }
 
-.nav-stacked li + .panel-group {
+.nav-stacked li+.panel-group {
     border-top: solid 1px #6f0f37;
-    box-shadow: inset 0px 1px 0px rgba(255,255,255,0.1);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
 }
 
 .panel-group {
     margin: 0px !important;
 }
 
-    .panel-group h4 {
-        color: #fff;
-    }
+.panel-group h4 {
+    color: #fff;
+}
 
 .panel-heading {
     background-color: #3171e7 !important;
 }
 
-    .panel-heading:hover {
-        background-color: #2a60c5 !important;
-    }
+.panel-heading:hover {
+    background-color: #2a60c5 !important;
+}
 
 
-.panel-group .panel-heading + .panel-collapse > .list-group, .panel-group .panel-heading + .panel-collapse > .panel-body {
+.panel-group .panel-heading+.panel-collapse>.list-group,
+.panel-group .panel-heading+.panel-collapse>.panel-body {
     border: none !important;
 }
 
@@ -440,46 +410,50 @@ footer h3{
     margin-bottom: 2%;
 }
 
-#conteudo .alert{
+#conteudo .alert {
     position: inherit;
     z-index: 1;
 }
 
-    #conteudo ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-        color: #B5BCCB;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 15px;
-        font-style: italic;
-        letter-spacing: 0.25px;
-        line-height: 20px;
-    }
+#conteudo ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #B5BCCB;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+}
 
-    #conteudo ::-moz-placeholder { /* Firefox 19+ */
-        color: #B5BCCB;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 15px;
-        font-style: italic;
-        letter-spacing: 0.25px;
-        line-height: 20px;
-    }
+#conteudo ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #B5BCCB;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+}
 
-    #conteudo :-ms-input-placeholder { /* IE 10+ */
-        color: #B5BCCB;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 15px;
-        font-style: italic;
-        letter-spacing: 0.25px;
-        line-height: 20px;
-    }
+#conteudo :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #B5BCCB;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+}
 
-    #conteudo :-moz-placeholder { /* Firefox 18- */
-        color: #B5BCCB;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 15px;
-        font-style: italic;
-        letter-spacing: 0.25px;
-        line-height: 20px;
-    }
+#conteudo :-moz-placeholder {
+    /* Firefox 18- */
+    color: #B5BCCB;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+}
 
 .conteudoSup .form-control {
     border: none;
@@ -495,7 +469,7 @@ footer h3{
     border: 1px solid #E5E6EB;
     border-radius: 8px;
     background-color: #FFFFFF;
-    box-shadow: 4px 7px 16px 0 rgba(193,206,235,0.35);
+    box-shadow: 4px 7px 16px 0 rgba(193, 206, 235, 0.35);
 }
 
 #conteudo h1 {
@@ -578,7 +552,7 @@ footer h3{
 }
 
 #conteudo .conteudoInf {
-    box-shadow: 4px 7px 16px 0 rgba(193,206,235,0.35);
+    box-shadow: 4px 7px 16px 0 rgba(193, 206, 235, 0.35);
     margin-top: 15px;
     padding: 2% 2% 15px;
     border: 1px solid #E5E6EB;
@@ -586,57 +560,57 @@ footer h3{
     background-color: #FFFFFF;
 }
 
-    #conteudo .conteudoInf h1 {
-        color: #667283;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 19px;
-    }
+#conteudo .conteudoInf h1 {
+    color: #667283;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+}
 
-    #conteudo .conteudoInf .table-responsive {
-        margin-top: 0.5%;
-    }
+#conteudo .conteudoInf .table-responsive {
+    margin-top: 0.5%;
+}
 
-    #conteudo .conteudoInf th {
-        color: #667283;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 19px;
-    }
+#conteudo .conteudoInf th {
+    color: #667283;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+}
 
-    #conteudo .conteudoInf tr td {
-        color: #667283;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 14px;
-        line-height: 18px;
-    }
+#conteudo .conteudoInf tr td {
+    color: #667283;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+}
 
-    #conteudo .conteudoInf .status h2 {
-        color: #FFFFFF;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 14px;
-        font-weight: bold;
-        line-height: 18px;
-        text-align: center;
-        margin: 0;
-        padding: 3px;
-        box-shadow: 1px 1px 3px 0 #D3D6DB;
-        border-radius: 7px;
-    }
+#conteudo .conteudoInf .status h2 {
+    color: #FFFFFF;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+    margin: 0;
+    padding: 3px;
+    box-shadow: 1px 1px 3px 0 #D3D6DB;
+    border-radius: 7px;
+}
 
-    #conteudo .conteudoInf .pendente h2 {
-        background-color: #EDC21B;
-    }
+#conteudo .conteudoInf .pendente h2 {
+    background-color: #EDC21B;
+}
 
-    #conteudo .conteudoInf .ativo h2 {
-        background-color: #8CC300;
-    }
+#conteudo .conteudoInf .ativo h2 {
+    background-color: #8CC300;
+}
 
-    #conteudo .conteudoInf .inativo h2 {
-        background-color: #B1B7C0;
-    }
+#conteudo .conteudoInf .inativo h2 {
+    background-color: #B1B7C0;
+}
 
 #conteudo .cadastro .row {
     padding-left: 15px;
@@ -651,7 +625,8 @@ footer h3{
     border-radius: 2em;
 }
 
-#conteudo .conteudoSup .responsavel input[type=checkbox], input[type=radio] {
+#conteudo .conteudoSup .responsavel input[type=checkbox],
+input[type=radio] {
     margin-left: 50%;
     margin-right: 15%;
 }
@@ -686,14 +661,14 @@ scrollbar {
 /**/
 
 @media(max-width:320px) {
-body.login{
-    padding: 0 !important;
+    body.login {
+        padding: 0 !important;
 
-}
+    }
 
-#consulta{
-    margin-top: 15px;
-}
+    #consulta {
+        margin-top: 15px;
+    }
 
     #login-form {
         position: initial;
@@ -727,7 +702,7 @@ body.login{
         width: initial;
         font-size: 11px;
     }
-   
+
     .affix img {
         display: none;
     }
@@ -738,9 +713,9 @@ body.login{
         display: none;
     }
 
-        .affix:hover {
-            width: 60% !important;
-        }
+    .affix:hover {
+        width: 60% !important;
+    }
 
     .intro {
         display: block !important;
@@ -783,13 +758,13 @@ body.login{
         margin: initial;
     }
 
-    #search{
+    #search {
         width: 71% !important;
     }
 }
 
 @media(min-width: 321px) and (max-width:767px) {
-    #consulta{
+    #consulta {
         margin-top: 15px;
     }
 
@@ -808,9 +783,9 @@ body.login{
         display: none;
     }
 
-        .affix:hover {
-            width: 60% !important;
-        }
+    .affix:hover {
+        width: 60% !important;
+    }
 
     .intro {
         display: block !important;
@@ -837,16 +812,21 @@ body.login{
         margin-top: 75px;
     }
 
-        #conteudo .conteudoSup .btn-primary {
-            font-size: 13px;
-        }
+    #conteudo .conteudoSup .btn-primary {
+        font-size: 13px;
+    }
 
-        #conteudo .conteudoSup .btn-success {
-            font-size: 13px;
-        }
-        .conteudoInf .btn{
-            font-size: 15px;
-        }
+    #conteudo .conteudoSup .btn-success {
+        font-size: 13px;
+    }
+
+    .conteudoInf .btn {
+        font-size: 15px;
+    }
+
+    #conteudo h1 {
+        margin-top: 28%;
+    }
 }
 
 @media(min-width: 768px) and (max-width:991px) {
@@ -861,7 +841,7 @@ body.login{
         width: 22% !important;
     }
 
-    .intro{
+    .intro {
         width: 22% !important;
     }
 
@@ -872,42 +852,66 @@ body.login{
         display: inline-block;
     }
 
-    body.login{
+    body.login {
         padding-top: 25px;
     }
 
     .conteudoInf .form-control {
         width: 100%;
     }
+
+    .nav-stacked>li+li {
+        margin-top: 0px;
+        margin-left: 0;
+    }
+
+    .affix .icon {
+        margin-left: -15px !important;
+        margin-top: 1px;
+    }
+
+    .conteudoSup {
+        margin-top: 3%;
+    }
 }
 
 @media(min-width: 992px) and (max-width: 1200px) {
-    body.login{
+    body.login {
         padding: 15px !important;
     }
-    body{
+
+    body {
         font-size: 12px;
     }
 
-    .affix{
+    .affix .nav>li>a {
+        padding: 0px 0px 0px 18px !important;
+        margin: 0;
+    }
+
+    .affix {
         margin-top: 75px;
     }
 
-    .affix:hover{
+    .affix:hover {
         width: 18.5% !important;
     }
 
-    .affix h3:hover{
+    .intro {
+        width: 18.5% !important;
+    }
+
+    .affix h3:hover {
         font-size: 12px !important;
         font-weight: 600;
     }
 
-    .affix h3:hover{
+    .affix h3:hover {
         font-size: 12px !important;
         font-weight: 600;
     }
 
-    .intro h3{
+    .intro h3 {
         font-size: 12px !important;
         font-weight: 600;
     }
@@ -917,5 +921,9 @@ body.login{
         cursor: pointer;
         position: fixed;
         display: inline-block;
+    }
+
+    .conteudoSup {
+        margin-top: 3%;
     }
 }

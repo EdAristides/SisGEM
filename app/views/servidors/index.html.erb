@@ -1,14 +1,27 @@
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
-  <p id="notice"><%= notice %></p>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1">
   <h1>Servidores</h1>
 </div>
 
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+    <div class="col-md-6 col-sm-8 col-xs-12">
+      <div class="form-group">
+                  <%= form_tag servidors_path, :action => 'index', :method => 'get' do %>
+                <%= 'Digite o siape para buscar' %>
+                <br>
+                <%= text_field_tag :search, params[:search], :class => "form-control", :style => "width: initial;" %>
+                <%= submit_tag "Buscar", :siape => nil, :class => "btn btn-primary" %>
+            <% end %>
+    </div>
+    </div>
+    <div class="col-md-6 col-sm-4 col-xs-12 text-right">
+      <div class="form-group">
+        <br>
       <% if can? :create, Servidor %>
         <%= link_to 'Novo Servidor', new_servidor_path, class:"btn btn-default" %>
       <% end %>
+  </div>
+
     </div>
   </div>
 
@@ -28,14 +41,7 @@
           </thead>
 
           <tbody>
-            <%= form_tag servidors_path, :action => 'index', :method => 'get' do %>
-              <p>
-                <%= 'Digite o siape para buscar' %>
-                <br>
-                <%= text_field_tag :search, params[:search] %>
-                <%= submit_tag "Buscar", :siape => nil %>
-              </p>
-            <% end %>
+
 
             <% @servidors.each do |servidor| %>
               <tr>

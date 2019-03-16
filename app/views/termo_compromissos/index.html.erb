@@ -1,13 +1,25 @@
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12">
-  <p id="notice"><%= notice %></p>
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1">
   <h1>Termos de Compromisso</h1>
 </div>
 
-<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-12 conteudoInf">
+<div class="col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-1 conteudoInf">
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+    <div class="col-md-6 col-sm-8 col-xs-12">
+      <div class="form-group">
+        <%= form_tag termo_compromissos_path, :action => 'index', :method => 'get' do %>
+                <%= 'Digite o número do termo para buscar' %>
+                <br>
+                <%= text_field_tag :search, params[:search], :class => "form-control", :style => "width: initial;"%>
+                <%= submit_tag "Buscar", :numTermo => nil, :class => "btn btn-primary" %>
+            <% end %>
+            </div>
+    </div>
+    <div class="col-md-6 col-sm-4 col-xs-12 text-right">
       <% if can? :create, TermoCompromisso %>
-        <%= link_to 'Novo Termo de Compromisso', new_termo_compromisso_path, class:"btn btn-default" %>
+       <div class="form-group">
+        <br>
+        <%= link_to 'Novo Termo', new_termo_compromisso_path, class:"btn btn-default" %>
+      </div>
       <% end %>
     </div>
   </div>
@@ -18,7 +30,7 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>Número do Termo</th>
+              <th>Número</th>
               <th>Equipamento</th>
               <th>Siape</th>
               <th>Nome</th>
@@ -30,14 +42,7 @@
           </thead>
 
           <tbody>
-            <%= form_tag termo_compromissos_path, :action => 'index', :method => 'get' do %>
-              <p>
-                <%= 'Digite o número do termo para buscar' %>
-                <br>
-                <%= text_field_tag :search, params[:search] %>
-                <%= submit_tag "Buscar", :numTermo => nil %>
-              </p>
-            <% end %>
+          
 
             <% @termo_compromissos.each do |termo| %>
               <tr>

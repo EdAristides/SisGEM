@@ -17,7 +17,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <script>
-        function open() {
+        function responsive() {
             if ($("#affix").hasClass("intro")) {
                 $("#affix").removeClass("intro");
             } else {
@@ -47,7 +47,7 @@
     </div>
     <% if user_signed_in? %>
     <div class="container-fluid">
-        <span id="resp" class="glyphicon glyphicon-menu-hamburger" onclick="open()"></span>
+        <span id="resp" class="glyphicon glyphicon-menu-hamburger" onclick="responsive()"></span>
         <div class="row mainrow">
             <div class="col-md-2 col-sm-2 col-xs-4">
                 <div id="affix" class="affix col-md-12 col-sm-12 col-xs-12">

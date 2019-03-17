@@ -16,4 +16,3 @@
 //= require globalize
 //= require currency
 //= require jquery.mask
-//= require jquery.validate.min

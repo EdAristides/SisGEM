@@ -37,7 +37,7 @@
     }
     var m = {
             symbol: "$",
-            separator: ",",
+            separator: ".",
             decimal: ".",
             formatWithSymbol: !1,
             errorOnInvalid: !1,

@@ -13,3 +13,7 @@
 //= require jquery3
 //= require jquery_ujs
 //= require bootstrap/dist/js/bootstrap
+//= require globalize
+//= require currency
+//= require jquery.mask
+//= require jquery.validate.min

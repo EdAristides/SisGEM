@@ -15,8 +15,8 @@
         <div class="col-md-4 col-sm-6 col-xs-12 text-left">
           <div class="form-group" >
             <%= form.label :tipo, 'Tipo do Equipamento' %><br />
-            <label class="radio-inline" onclick="notebook()"><%= form.radio_button :tipo, 'Notebook', id:'note', :checked => true %>Notebook</label>
-            <label class="radio-inline" onclick="tablet()"><%= form.radio_button :tipo, 'Tablet', id:'tablet'%>Tablet</label>
+            <label for="equipamento[tipo]" class="radio-inline"><%= form.radio_button :tipo, 'Notebook', id:'note', :checked => true %>Notebook</label>
+            <label for="equipamento[tipo]" class="radio-inline"><%= form.radio_button :tipo, 'Tablet', id:'tablet'%>Tablet</label>
           </div>
         </div>
       </div>
@@ -102,17 +102,18 @@
     Htmltablet = $( "#tabletSelect" );
     $( "#tabletSelect" ).remove();
   });
-  
-  function notebook(){
+
+  $( "#note" ).click(function() {
     if($( "#note" ).prop("checked", true)){
       $( "#tabletSelect" ).before(Htmlnote);
       $( "#tabletSelect" ).remove();
     }
-  }
-  function tablet(){
+    });
+
+  $( "#tablet" ).click(function() {
     if($( "#tablet" ).prop("checked", true)){
       $( "#noteSelect" ).before(Htmltablet);
       $( "#noteSelect" ).remove();
     }
-  }
+  });
 </script>

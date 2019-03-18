@@ -16,15 +16,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <script>
-        function responsive() {
-            if ($("#affix").hasClass("intro")) {
-                $("#affix").removeClass("intro");
-            } else {
-                $("#affix").addClass("intro");
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -32,7 +23,7 @@
         <div class="navbar navbar-fixed-top text-center">
             <div class="container-fluid">
                 <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-2 col-xs-12 logo">
-                    SisGEM
+                    <a href="#conteudo">SisGEM</a>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <% if user_signed_in? %>
@@ -47,54 +38,54 @@
     </div>
     <% if user_signed_in? %>
     <div class="container-fluid">
-        <span id="resp" class="glyphicon glyphicon-menu-hamburger" onclick="responsive()"></span>
+        <span id="resp" class="glyphicon glyphicon-menu-hamburger"></span>
         <div class="row mainrow">
             <div class="col-md-2 col-sm-2 col-xs-4">
                 <div id="affix" class="affix col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-stacked text-left">
                         <li><a href="/">
                                 <div class="icon index"></div>
-                                <h3> &nbsp;Index</h3>
+                                <span> &nbsp;Inicio</span>
                             </a></li>
                         <li><a href="/modelos">
                                 <div class="icon modelos"></div>
-                                <h3> &nbsp;Modelos</h3>
+                                <span> &nbsp;Modelos</span>
                             </a></li>
                         <li><a href="/equipamentos">
                                 <div class="icon equipamentos"></div>
-                                <h3> &nbsp;Equipamentos</h3>
+                                <span> &nbsp;Equipamentos</span>
                             </a></li>
                         <li><a href="/pecas">
                                 <div class="icon pecas"></div>
-                                <h3> &nbsp;Peças</h3>
+                                <span> &nbsp;Peças</span>
                             </a></li>
                         <li><a href="/estoque_pecas">
                                 <div class="icon estoque_pecas"></div>
-                                <h3> &nbsp;Estoque</h3>
+                                <span> &nbsp;Estoque</span>
                             </a></li>
                         <li><a href="/manutencaos">
                                 <div class="icon manutencao"></div>
-                                <h3> &nbsp;Manutenção</h3>
+                                <span> &nbsp;Manutenção</span>
                             </a></li>
                         <li><a href="/servidors">
                                 <div class="icon servidores"></div>
-                                <h3> &nbsp;Servidores</h3>
+                                <span> &nbsp;Servidores</span>
                             </a></li>
                         <li><a href="/termo_compromissos">
                                 <div class="icon termos"></div>
-                                <h3> &nbsp;Termos</h3>
+                                <span> &nbsp;Termos</span>
                             </a></li>
                         <li><a href="/ocorrencia">
                                 <div class="icon ocorrencias"></div>
-                                <h3> &nbsp;Ocorrências</h3>
+                                <span> &nbsp;Ocorrências</span>
                             </a></li>
                         <% if current_user.funcao == "Coordenador" %>
                         <li><a href="/users">
                                 <div class="icon users"></div>
-                                <h3> &nbsp;Usuários</h3>
+                                <span> &nbsp;Usuários</span>
                             </a></li>
                         <% end %>
-                        <!-- <li><a href="/users"><div class="icon users"></div><h3> &nbsp;Usuários</h3></a></li> -->
+                        <!-- <li><a href="/users"><div class="icon users"></div><span> &nbsp;Usuários</span></a></li> -->
                     </ul>
                 </div>
             </div>
@@ -109,6 +100,14 @@
     </div>
 
     <script>
+        $( "#resp" ).click(function() {
+            if ($("#affix").hasClass("intro")) {
+                $("#affix").removeClass("intro");
+            } else {
+                $("#affix").addClass("intro");
+            }
+        });
+
         $(".celular").mask("(00) 00000-0000");
         $('.currency').mask('000.000.000.000.000.00', { reverse: true });
     </script>

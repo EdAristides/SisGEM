@@ -108,7 +108,7 @@ footer {
     text-align: center;
 }
 
-footer h3 {
+footer h2 {
     color: #fff;
     margin-top: 16%;
     font-size: 14px;
@@ -264,45 +264,31 @@ footer h3 {
     margin-top: 63px;
 }
 
-.affix h3 {
-    display: none;
-}
-
 .affix span {
     font-family: 'Ubuntu', sans-serif;
     display: none;
     width: 20%;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.affix:hover h3 {
+.affix:hover span {
     display: inline-block !important;
     color: #CDD3E1;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 13px;
+    font-size: 12px !important;
     font-weight: 600;
     letter-spacing: 0.22px;
     line-height: 18px;
     width: 55%;
-}
 
-.affix:hover span {
-    display: initial;
-    color: #FFFFFF;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 0.22px;
-    line-height: 18px;
-    background-color: #1E76F4;
-    border-radius: 14px;
-    padding: 1px 10px;
-    margin-left: 15px;
 }
 
 .intro {
     width: 16.5% !important;
 }
 
-.intro h3 {
+.intro span {
     font-size: 12px !important;
     display: inline-block !important;
     color: #CDD3E1;
